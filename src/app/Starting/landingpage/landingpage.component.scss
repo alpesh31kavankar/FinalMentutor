@@ -1,0 +1,62 @@
+.banerfontcolor{
+    color:#ffffff !important;
+}
+
+.carousel-control-prev-icon {
+    background-image: none;
+    color: #007bb9 !important;
+}
+
+.textleft{
+    text-align: left !important;
+}
+
+.textright{
+    text-align: right !important;
+}
+
+section{
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+
+.clientlogo{
+    width: 100% !important;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.clientpadd{
+   padding: 2%;
+}
+.h6{
+    font-weight: 100 !important;
+}
+
+.carousel-indicators {
+   
+    bottom: 12% !important;
+}
+
+.carousel-caption {
+   
+    bottom: 15%;
+}
+
+.planpadding{
+    padding: 3%;
+}
+@media only screen and (max-width: 600px) {
+    .planpadding{
+        padding: 5%;
+    }
+}
+
+.contenttext{
+    border-bottom: 3px solid #007bb9;
+    border-top: 3px solid #007bb9;
+    border-radius: 10px 10px 10px 10px;
+    padding: 2%
+}
+
+.boxshadoww{
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px !important;
+}

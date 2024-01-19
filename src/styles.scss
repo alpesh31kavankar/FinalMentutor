@@ -1,0 +1,153 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$Mentutor-primary: mat.define-palette(mat.$indigo-palette);
+$Mentutor-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$Mentutor-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$Mentutor-theme: mat.define-light-theme((
+  color: (
+    primary: $Mentutor-primary,
+    accent: $Mentutor-accent,
+    warn: $Mentutor-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($Mentutor-theme);
+
+/* You can add global styles to this file, and also import other style files */
+@import '@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '@fortawesome/fontawesome-free/scss/solid.scss';
+@import '@fortawesome/fontawesome-free/scss/regular.scss';
+@import '@fortawesome/fontawesome-free/scss/brands.scss';
+
+@import 'node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import 'mdb-angular-ui-kit/assets/scss/mdb.scss';
+@import 'node_modules/bs-stepper/dist/css/bs-stepper.min.css';
+
+
+
+// Landing page Css Start
+
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+
+    color: #ffffff !important;
+
+}
+.carousel-indicators button {
+    background-color: #007bb9 !important;
+}
+
+@media only screen and (max-width: 600px) {
+    .carousel-indicators button {
+        background-color: #007bb9 !important;
+        display: none !important;
+    }
+    .text-white {
+        font-size: 100%;
+        --mdb-text-opacity: 1;
+        color: rgba(var(--mdb-white-rgb), var(--mdb-text-opacity)) !important;
+    }
+  }
+
+
+
+.headingtxt{
+    text-align: center;
+    color: #007bb9;
+}
+.carousel-indicators {
+   
+    bottom: 12% !important;
+}
+
+
+
+
+.boxshadoww{
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px !important;
+}
+
+
+.basic-3 {
+    background: 
+        linear-gradient(currentColor 0 0) 
+        bottom /var(--d, 0) 3px 
+        no-repeat;
+    transition:0.5s;
+  }
+  .basic-3:hover {
+    --d: 100%;
+  }
+
+
+
+
+
+
+// .form-outline .form-control:not(:empty):focus + .form-label,
+// .form-outline .form-control:not(:empty) + .form-label {
+//     transform: translateY(-1rem) translateY(0.1rem) scale(0.8)!important;
+// }
+
+
+// Landing page Css End
+
+// Modal start
+.modal-header {
+border-top: 5px solid #007bb9;
+border-radius: 10px 10px 0px 0px;
+}
+.modal-footer {
+    border-bottom: 5px solid #007bb9;
+    border-radius: 0px 0px 10px 10px;
+    }
+// modal end
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+.bottomborder{
+  border-bottom: 5px solid #007bb9 !important;
+    border-radius: 10px 10px 10px 10px !important;
+}
+
+.topborder{
+  border-top: 5px solid #007bb9 !important;
+    border-radius: 10px 10px 10px 10px !important;
+}
+
+.counterspann {
+  font-size: 100%;
+    // position: fixed;
+    font-weight: 600;
+    font-family: ui-rounded;
+    color: #007bb9;
+    background-color: white;
+    border-radius: 10%;
+    padding: 1%;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px !important;
+}
