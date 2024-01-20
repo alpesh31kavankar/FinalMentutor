@@ -55,8 +55,15 @@ import { IndividualmenteeprofileComponent } from './IndividualMenteeDashMenus/in
 import { IndividualmenteecoursesComponent } from './IndividualMenteeDashMenus/individualmenteecourses/individualmenteecourses.component';
 import { IndividualmenteesessionsComponent } from './IndividualMenteeDashMenus/individualmenteesessions/individualmenteesessions.component';
 import { IndividualmenteebusinessassociateComponent } from './IndividualMenteeDashMenus/individualmenteebusinessassociate/individualmenteebusinessassociate.component';
+<<<<<<< HEAD
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+=======
+import { IndividualforgototpComponent } from './Registration/individualforgototp/individualforgototp.component';
+import { IndividualresetpasswordComponent } from './Registration/individualresetpassword/individualresetpassword.component';
+import { IndividualforgotmailComponent } from './Registration/individualforgotmail/individualforgotmail.component';
+import { IndividualemailverifyotpComponent } from './Registration/individualemailverifyotp/individualemailverifyotp.component';
+>>>>>>> c3d735fd0f1bbd2420fbd2d1116a6c7ee9256823
 
 @NgModule({
   declarations: [
@@ -83,7 +90,11 @@ import { HttpClientModule } from '@angular/common/http';
     IndividualmenteeprofileComponent,
     IndividualmenteecoursesComponent,
     IndividualmenteesessionsComponent,
-    IndividualmenteebusinessassociateComponent
+    IndividualmenteebusinessassociateComponent,
+    IndividualforgototpComponent,
+    IndividualresetpasswordComponent,
+    IndividualforgotmailComponent,
+    IndividualemailverifyotpComponent
   ],
   imports: [
     BrowserModule,
