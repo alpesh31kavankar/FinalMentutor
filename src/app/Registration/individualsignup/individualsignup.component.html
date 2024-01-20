@@ -13,13 +13,15 @@
                       <div class="row mb-4">
                         <div class="col">
                           <mdb-form-control>
-                            <input mdbInput type="text" id="form3Example1" class="form-control" />
+                            <input mdbInput type="text" id="form3Example1" class=" form-control"[(ngModel)]="registration.FName" #NameControl="ngModel" name="FName"    onkeypress="return (event.charCode > 64 && 
+                            event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)" required />
                             <label mdbLabel class="form-label" for="form3Example1">First name</label>
                           </mdb-form-control>
                         </div>
                         <div class="col">
                           <mdb-form-control class="form-outline">
-                            <input mdbInput type="text" id="form3Example2" class="form-control" />
+                            <input mdbInput type="text" id="form3Example2" class="form-control"[(ngModel)]="registration.LName" #NameControl="ngModel" name="LName"    onkeypress="return (event.charCode > 64 && 
+                            event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)" required />
                             <label mdbLabel class="form-label" for="form3Example2">Last name</label>
                           </mdb-form-control>
                         </div>
@@ -27,13 +29,13 @@
                     
                       <!-- Email input -->
                       <mdb-form-control class="mb-4">
-                        <input mdbInput type="email" id="form3Example3" class="form-control" />
+                        <input mdbInput type="email" id="form3Example3" class="form-control"[(ngModel)]="registration.Email" #EmailControl="ngModel" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" name="Email"  required />
                         <label mdbLabel class="form-label" for="form3Example3">Email address</label>
                       </mdb-form-control>
                     
                       <!-- Password input -->
                       <mdb-form-control class="mb-4">
-                        <input mdbInput type="password" id="form3Example4" class="form-control" />
+                        <input mdbInput type="password" id="form3Example4" class="form-control"[(ngModel)]="registration.Password" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}" name="Password" #passwordControl="ngModel" required />
                         <label mdbLabel class="form-label" for="form3Example4">Password</label>
                       </mdb-form-control>
                     
@@ -71,7 +73,7 @@
                           <i class="fab fa-twitter"></i>
                         </button>
                     
-                        <button mdbRipple type="button" class="btn btn-secondary btn-floating mx-1">
+                        <button mdbRipple type="button"(click)="OnSubmit();"  class="btn btn-secondary btn-floating mx-1">
                           <i class="fab fa-github"></i>
                         </button>
                       </div>
