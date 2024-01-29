@@ -114,13 +114,13 @@ export class UserDetail {
     UpdatedDate: string;
 }
 
-export class MenteeProfile {  
+export class MenteeProfile {
     MenteeProfileId: number;
     RegistrationId: number;
-    JobTitle: number;
-    Industry: string; 
+    JobTitle: string;
+    Industry: string;
     YearsOfExperience: string;
-    TargetedDesignation: string; 
+    TargetedDesignation: string;
     Status: string;
     CreatedBy: string;
     CreatedDate: string;
@@ -128,17 +128,17 @@ export class MenteeProfile {
     UpdatedDate: string;
 }
 
-export class MentorProfile {  
+export class MentorProfile {
     MentorProfileId: number;
     RegistrationId: number;
-   // TransactionId: number;
-    Address: number;
-    JobTitle: number;
+    // TransactionId: number;
+    Address: string;
+    JobTitle: string;
     Company: string;
-    Industry: string; 
+    Industry: string;
     HighestEducation: string;
-   // Resume: string;
-    AreaOfExpertise: string; 
+    // Resume: string;
+    AreaOfExpertise: string;
     LanguagesSpoken: string;
     Status: string;
     CreatedBy: string;

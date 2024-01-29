@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 
 
 
+
 // MDB Modules
 import { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';
 import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
@@ -55,15 +56,22 @@ import { IndividualmenteeprofileComponent } from './IndividualMenteeDashMenus/in
 import { IndividualmenteecoursesComponent } from './IndividualMenteeDashMenus/individualmenteecourses/individualmenteecourses.component';
 import { IndividualmenteesessionsComponent } from './IndividualMenteeDashMenus/individualmenteesessions/individualmenteesessions.component';
 import { IndividualmenteebusinessassociateComponent } from './IndividualMenteeDashMenus/individualmenteebusinessassociate/individualmenteebusinessassociate.component';
-<<<<<<< HEAD
+
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-=======
+
 import { IndividualforgototpComponent } from './Registration/individualforgototp/individualforgototp.component';
 import { IndividualresetpasswordComponent } from './Registration/individualresetpassword/individualresetpassword.component';
 import { IndividualforgotmailComponent } from './Registration/individualforgotmail/individualforgotmail.component';
 import { IndividualemailverifyotpComponent } from './Registration/individualemailverifyotp/individualemailverifyotp.component';
->>>>>>> c3d735fd0f1bbd2420fbd2d1116a6c7ee9256823
+
+import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
+import {
+  GoogleLoginProvider,
+  FacebookLoginProvider
+} from '@abacritt/angularx-social-login';
+
+
 
 @NgModule({
   declarations: [
@@ -126,11 +134,34 @@ MatFormFieldModule,
 MatInputModule,
 MatSelectModule,
 MatRadioModule,
-
+ SocialLoginModule,
 
   ],
   providers: [
 
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+             // '496925693986-i3markpgj2kk2f6n3rb6k6eviimv6g55.apps.googleusercontent.com'
+              // 496925693986-i3markpgj2kk2f6n3rb6k6eviimv6g55.apps.googleusercontent.com
+              '256869107176-efrnlcvp8v5q273kq8e3o9is8f59oje0.apps.googleusercontent.com'
+            )
+          },
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('clientId')
+          }
+        ],
+        onError: (err) => {
+          console.error(err);
+        }
+      } as SocialAuthServiceConfig,
+    }
   ],
   bootstrap: [AppComponent]
 })

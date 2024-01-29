@@ -177,9 +177,9 @@ AddUserDetail(UserDetail): Observable<any> {
 AddMenteeProfile(MenteeProfile): Observable<any> {
     return this.http.post<MenteeProfile>(GlobalVariable.SERVICE_API_URL + "MenteeProfile/AddMenteeProfile", MenteeProfile, this.httpOptions);
 }
-// GetAllUserDetail() {
-//     return this.http.get<any>(GlobalVariable.SERVICE_API_URL + "UserDetail/GetAllUserDetail", this.httpOptions);
-// }
+GetAllMenteeProfile() {
+    return this.http.get<any>(GlobalVariable.SERVICE_API_URL + "MenteeProfile/GetAllMenteeProfile", this.httpOptions);
+}
 // DeleteUserDetail(UserDetailId): Observable<any> {
 //     return this.http.delete<any>(GlobalVariable.SERVICE_API_URL + "UserDetail/DeleteUserDetail?UserDetailId=" + UserDetailId, this.httpOptions);
 // }
@@ -190,9 +190,21 @@ AddMenteeProfile(MenteeProfile): Observable<any> {
 //     return this.http.post<UserDetail>(GlobalVariable.SERVICE_API_URL + "UserDetail/UpdateUserDetail", UserDetail, this.httpOptions);
 // }
 
-//MenteeProfile
-AddMentorProfile(MentorProfile): Observable<any> {
+  //MentorProfile
+  AddMentorProfile(MentorProfile): Observable<any> {
     return this.http.post<MentorProfile>(GlobalVariable.SERVICE_API_URL + "MentorProfile/AddMentorProfile", MentorProfile, this.httpOptions);
+}
+GetAllMentorProfile() {
+    return this.http.get<any>(GlobalVariable.SERVICE_API_URL + "MentorProfile/GetAllMentorProfile", this.httpOptions);
+}
+// DeleteUserDetail(UserDetailId): Observable<any> {
+//     return this.http.delete<any>(GlobalVariable.SERVICE_API_URL + "UserDetail/DeleteUserDetail?UserDetailId=" + UserDetailId, this.httpOptions);
+// }
+GetMentorProfileById(MentorProfileId): Observable<any> {
+    return this.http.get<any>(GlobalVariable.SERVICE_API_URL + "MentorProfile/GetMentorProfileById?MentorProfileId=" + MentorProfileId, this.httpOptions);
+}
+UpdateMentorProfile(MentorProfile): Observable<any> {
+    return this.http.post<MentorProfile>(GlobalVariable.SERVICE_API_URL + "MentorProfile/UpdateMentorProfile", MentorProfile, this.httpOptions);
 }
 
 }

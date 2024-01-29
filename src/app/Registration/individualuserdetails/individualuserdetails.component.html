@@ -32,6 +32,11 @@
                             <mat-option value="audi">Srilanka</mat-option>
                           </mat-select>
                         </mat-form-field>
+                        <!-- <select id="CountryId" [(ngModel)]="userDetail.CountryId" name="CountryId">
+                          <option *ngFor="let c of countries" [value]="c.id">
+                            {{c.name}}
+                          </option>
+                        </select> -->
                       </div>
                       <div class="col">
                         <mat-form-field>
@@ -60,14 +65,14 @@
                       <div class="col">
                         <mdb-form-control class="mb-4">
                           <!-- <label class="form-label" for="customFile">Mentors Excel sheet</label> -->
-        <input type="file" class="form-control" id="customFile" accept=".xlsx" />
+        <input type="file" class="form-control" id="customFile"name="Photo"  [(ngModel)]="userDetail.Photo"  (change)="fileChangeEvent($event)" accept="image/png, image/jpeg" />
       </mdb-form-control> 
                         </div>
                         <div class="col">
   <!-- Number input -->
   <mdb-form-control class="form-outline mb-4">
-    <input mdbInput type="number" id="form6Example6" class="form-control" />
-    <label mdbLabel class="form-label" for="form6Example6">Phone</label>
+    <input mdbInput type="number" id="form6Example6" [(ngModel)]="userDetail.Contact" #ContactControl="ngModel"  name="Contact" class="form-control" />
+    <label mdbLabel class="form-label" for="form6Example6">Contact</label>
   </mdb-form-control>
                         </div>
                         </div>
@@ -77,7 +82,7 @@
 
     <!-- Message input -->
     <mdb-form-control class="form-outline mb-4">
-      <textarea mdbInput class="form-control" id="form6Example7" rows="4"></textarea>
+      <textarea mdbInput class="form-control" id="form6Example7"[(ngModel)]="userDetail.Address" #AddressControl="ngModel"  name="Address" rows="4"></textarea>
       <label mdbLabel class="form-label" for="form6Example7">Address</label>
     </mdb-form-control>
 
@@ -144,7 +149,7 @@
              
                   
                     <!-- Submit button -->
-                    <button mdbRipple (click)="openModal()" type="button" class="btn btn-primary btn-block mb-4" >
+                    <button mdbRipple (click)="OnSubmit();" type="button" class="btn btn-primary btn-block mb-4" >
                     Submit
                     </button>
                   </form>

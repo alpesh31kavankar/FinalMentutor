@@ -54,10 +54,14 @@ const routes: Routes = [
   {path:'individualmenteecourses',component:IndividualmenteecoursesComponent},
   {path:'individualmenteebusinessassociate',component:IndividualmenteebusinessassociateComponent},
 
-  {path:'individualemailverifyotp',component:IndividualemailverifyotpComponent},
+  {path:'individualemailverifyotp/:Id',component:IndividualemailverifyotpComponent},
   {path:'individualforgotmail',component:IndividualforgotmailComponent},
-  {path:'individualforgototp',component:IndividualforgototpComponent},
-  {path:'individualresetpassword',component:IndividualresetpasswordComponent},
+  {path:'individualforgototp/:Id',component:IndividualforgototpComponent},
+  {path:'individualresetpassword/:Id',component:IndividualresetpasswordComponent},
+
+
+  
+  {path:'Selectrolemodal',component:SelectrolemodalComponent},
 ];
 
 
