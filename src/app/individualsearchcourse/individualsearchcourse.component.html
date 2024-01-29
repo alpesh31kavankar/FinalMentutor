@@ -1,0 +1,179 @@
+
+
+<div class="modal-header">
+  <p class="h4 headingtxt">Search New Courses</p>
+    <button
+      type="button"
+      class="btn-close"
+      (click)="modalRef.close()"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="modal-body">
+
+    <section>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12">
+              <div class="row boxshadoww rowpadd fltrr" style="    justify-content: center;">
+                  <!-- <p class="h4 headingtxt">Search New Courses</p>
+                  <p class="h6 headingtxt">Populor </p> -->
+                  <div class="row ">
+                    <div class="col-lg-4 col-4" style="display: flex;     align-self: center;">
+                      <!-- Email input -->
+                      <mdb-form-control class="mb-4" style="    width: -webkit-fill-available;">
+                       <input mdbInput type="text" id="form2Example1" class="form-control" />
+                       <label mdbLabel class="form-label" for="form2Example1">Search Courses...</label>
+                     </mdb-form-control>
+                     <button type="button" style="    height: fit-content;" class="btn btn-primary" mdbRipple>SEARCH</button>
+               </div>
+               <div class="col-lg-4 col-4">
+                 <mat-form-field>
+                   <mat-label>Industry</mat-label>
+                   <mat-select>
+               
+                       <mat-option [value]="1">one</mat-option>
+                       <mat-option [value]="2">Two</mat-option>
+                       <mat-option [value]="3">Three</mat-option>
+                
+                   </mat-select>
+                 </mat-form-field>
+               </div>
+               <div class="col-lg-4 col-4">
+                 <mat-form-field>
+                   <mat-label>Skill</mat-label>
+                   <mat-select>
+               
+                       <mat-option [value]="1">one</mat-option>
+                       <mat-option [value]="2">Two</mat-option>
+                       <mat-option [value]="3">Three</mat-option>
+                
+                   </mat-select>
+                 </mat-form-field>
+               </div>
+                  </div>
+     
+             
+                  </div>
+                  </div>
+                  </div>
+          <div class="row">
+          <div class="col-lg-12">
+              <div class="row boxshadoww rowpadd fltrr" style="    justify-content: center; padding: 2%;">
+                  <!-- <p class="h4 headingtxt">Your Active Courses</p>
+                  <p class="h6 headingtxt">Subtitle here </p> -->
+                  <div class="row" >
+                    <div class="col-lg-6 col-6"></div>
+                        <div class="col-lg-6 col-6" style="text-align: right;">
+                           <b>Filter By Mentor : </b> 
+                           <div class="form-check form-check-inline">
+                        
+                            <input
+                              mdbRadio
+                              class="form-check-input"
+                              type="radio"
+                              name="inlineRadioOptions"
+                              id="inlineRadio1"
+                              value="option1"
+                            />
+                            <label class="form-check-label" for="inlineRadio1">Search All</label>
+                          </div>
+                            <div class="form-check form-check-inline">
+                        
+                                <input
+                                  mdbRadio
+                                  class="form-check-input"
+                                  type="radio"
+                                  name="inlineRadioOptions"
+                                  id="inlineRadio1"
+                                  value="option1"
+                                />
+                                <label class="form-check-label" for="inlineRadio1">Mentor1</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input
+                                  mdbRadio
+                                  class="form-check-input"
+                                  type="radio"
+                                  name="inlineRadioOptions"
+                                  id="inlineRadio2"
+                                  value="option2"
+                                />
+                              <label class="form-check-label" for="inlineRadio2">Mentor2</label>
+                              </div>
+                        </div>
+                    </div>
+                  <div class="row">
+                   
+                    <div class="col-lg-3 col-4 bottomborder topborder boxshadoww clientpadd txtt" style="    font-size: 66%;">
+                      <img class="clientlogo" style="    border-radius: 0px 0px 10px 10px;" src="\assets\Images\Logo\tata.jpg"  alt="...">
+                    <div class="row">
+                     <div class="col-lg-6 col-6 brder">₹2000</div>
+                     <div class="col-lg-6 col-6 brder">Java</div>
+                     <div class="col-lg-12 brder txtcntr">Fullstack Angular</div>
+                     <div class="col-lg-12  txtcntr"><a href="#!">View</a></div>
+                    </div>
+                   </div>
+
+                    <div class="col-lg-3 col-4 bottomborder topborder boxshadoww clientpadd txtt" style="    font-size: 66%;">
+                      <img class="clientlogo" style="    border-radius: 0px 0px 10px 10px;" src="\assets\Images\Logo\birla.jpg"  alt="...">
+                    <div class="row">
+                     <div class="col-lg-6 col-6 brder">₹2000</div>
+                     <div class="col-lg-6 col-6 brder">Java</div>
+                     <div class="col-lg-12 brder txtcntr">Fullstack Angular</div>
+                     <div class="col-lg-12  txtcntr"><a href="#!">View</a></div>
+                    </div>
+                   </div>
+                    
+                   <div class="col-lg-3 col-4 bottomborder topborder boxshadoww clientpadd txtt" style="    font-size: 66%;">
+                    <img class="clientlogo" style="    border-radius: 0px 0px 10px 10px;" src="\assets\Images\Logo\tata.jpg"  alt="...">
+                  <div class="row">
+                   <div class="col-lg-6 col-6 brder">₹2000</div>
+                   <div class="col-lg-6 col-6 brder">Java</div>
+                   <div class="col-lg-12 brder txtcntr">Fullstack Angular</div>
+                   <div class="col-lg-12  txtcntr"><a href="#!">View</a></div>
+                  </div>
+                 </div>
+                 <div class="col-lg-3 col-4 bottomborder topborder boxshadoww clientpadd txtt" style="    font-size: 66%;">
+                   <img class="clientlogo" style="    border-radius: 0px 0px 10px 10px;" src="\assets\Images\Logo\birla.jpg"  alt="...">
+                 <div class="row">
+                  <div class="col-lg-6 col-6 brder">₹2000</div>
+                  <div class="col-lg-6 col-6 brder">Java</div>
+                  <div class="col-lg-12 brder txtcntr">Fullstack Angular</div>
+                  <div class="col-lg-12  txtcntr"><a href="#!">View</a></div>
+                 </div>
+                </div>
+                <div class="col-lg-3 col-4 bottomborder topborder boxshadoww clientpadd txtt" style="    font-size: 66%;">
+                  <img class="clientlogo" style="    border-radius: 0px 0px 10px 10px;" src="\assets\Images\Logo\tata.jpg"  alt="...">
+                <div class="row">
+                 <div class="col-lg-6 col-6 brder">₹2000</div>
+                 <div class="col-lg-6 col-6 brder">Java</div>
+                 <div class="col-lg-12 brder txtcntr">Fullstack Angular</div>
+                 <div class="col-lg-12  txtcntr"><a href="#!">View</a></div>
+                </div>
+               </div>
+               <div class="col-lg-3 col-4 bottomborder topborder boxshadoww clientpadd txtt" style="    font-size: 66%;">
+                  <img class="clientlogo" style="    border-radius: 0px 0px 10px 10px;" src="\assets\Images\Logo\birla.jpg"  alt="...">
+                <div class="row">
+                 <div class="col-lg-6 col-6 brder">₹2000</div>
+                 <div class="col-lg-6 col-6 brder">Java</div>
+                 <div class="col-lg-12 brder txtcntr">Fullstack Angular</div>
+                 <div class="col-lg-12  txtcntr"><a href="#!">View</a></div>
+                </div>
+               </div>
+                    </div>
+                  
+              </div>
+          </div>
+          </div>
+          </div>
+          </section>
+
+</div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modalRef.close()">
+      Close
+    </button>
+    <button type="button" class="btn btn-primary">Save changes</button>
+  </div>
+

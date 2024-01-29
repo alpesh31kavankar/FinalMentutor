@@ -1,0 +1,430 @@
+<!-- <section>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4">
+                sidenav
+            </div>
+            <div class="col-lg-8">
+                other
+            </div>
+        </div>
+    </div>
+</section> -->
+
+
+
+
+<section>
+    <div class="container-fluid">
+        <div class="row rowpadd">
+            <div class="col-lg-4 ">
+                <div class="row boxshadoww rowpadd">
+                <!-- Begin page content -->
+<div class="container bootstrap snippets bootdey">
+    <div class="row">
+      <div class="col-lg-12 col-12">
+        <div class="g-hover-card boxshadoww">
+        <img src="\assets\Images\users\counterbg.jpg" alt="">
+        <div class="user-avatar">
+           <!-- <img src="\assets\Images\users\user1.jpg" alt=""> -->
+           <span class="counterspan">04</span>
+        </div>
+        <div class="info">
+           <div class="title">
+            <a href="https://bootdey.com/profile/Dey-Dey">Mentors</a>
+           </div>
+           <div class="description">Connected</div>
+        </div>
+          <div class="bottom">
+          
+
+<mdb-accordion>
+  <mdb-accordion-item>
+    <ng-template mdbAccordionItemHeader >
+      <button type="button" style="    padding-top: 1%;
+      padding-bottom: 1%; justify-content: center !important; width: -webkit-fill-available;" class="btn btn-primary btn-rounded" mdbRipple>See All</button>
+    </ng-template>
+    <ng-template mdbAccordionItemBody>
+      <!-- mentor list start -->
+      <ul class="list-group list-group-light">
+        <li class="list-group-item d-flex justify-content-between align-items-center mntrlst">
+          <div class="d-flex align-items-center">
+            <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt="" style="width: 45px; height: 45px"
+              class="rounded-circle" />
+            <div class="ms-3">
+              <p class="fw-bold mb-1">John Doe</p>
+              <p class="text-muted mb-0">john.doe@gmail.com</p>
+            </div>
+          </div>
+          <a class="btn btn-link btn-rounded btn-sm" (click)="openMentor()" role="button">View</a>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center mntrlst" >
+          <div class="d-flex align-items-center">
+            <img src="https://mdbootstrap.com/img/new/avatars/6.jpg" class="rounded-circle" alt=""
+              style="width: 45px; height: 45px" />
+            <div class="ms-3">
+              <p class="fw-bold mb-1">Alex Ray</p>
+              <p class="text-muted mb-0">alex.ray@gmail.com</p>
+            </div>
+          </div>
+          <a class="btn btn-link btn-rounded btn-sm" (click)="openMentor()" role="button">View</a>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center mntrlst">
+          <div class="d-flex align-items-center">
+            <img src="https://mdbootstrap.com/img/new/avatars/7.jpg" class="rounded-circle" alt=""
+              style="width: 45px; height: 45px" />
+            <div class="ms-3">
+              <p class="fw-bold mb-1">Kate Hunington</p>
+              <p class="text-muted mb-0">kate.hunington@gmail.com</p>
+            </div>
+          </div>
+      
+          <a class="btn btn-link btn-rounded btn-sm" (click)="openMentor()" role="button">View</a>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center mntrlst" >
+          <div class="d-flex align-items-center">
+            <img src="https://mdbootstrap.com/img/new/avatars/6.jpg" class="rounded-circle" alt=""
+              style="width: 45px; height: 45px" />
+            <div class="ms-3">
+              <p class="fw-bold mb-1">Alex Ray</p>
+              <p class="text-muted mb-0">alex.ray@gmail.com</p>
+            </div>
+          </div>
+          <a class="btn btn-link btn-rounded btn-sm" (click)="openMentor()" role="button">View</a>
+        </li>
+ 
+      
+      </ul>
+      <!-- mentor list end -->
+      <hr/>
+    </ng-template>
+  </mdb-accordion-item>
+
+</mdb-accordion>
+  
+        </div>
+       </div>
+      </div>
+  
+
+ 
+ 
+    </div>
+    </div>
+                </div>
+        
+
+                <!-- counter end -->
+
+                <!-- to be mentor reuest start -->
+                <div class="row boxshadoww rowpadd" style="overflow: scroll;">
+                  <p class="h4 headingtxt">Sent Request by you </p>
+                  <p class="h6 headingtxt">To Mentees for Course</p>
+                  <table class="table align-middle mb-0 bg-white">
+                    <thead class="bg-light">
+                      <tr>
+                        <th>Name</th>
+                       
+                        <!-- <th>Status</th> -->
+                    
+                        <th>Actions</th>
+                      
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <div class="d-flex align-items-center">
+                            <img
+                                src="https://mdbootstrap.com/img/new/avatars/8.jpg"
+                                alt=""
+                                style="width: 45px; height: 45px"
+                                class="rounded-circle"
+                                />
+                            <div class="ms-3">
+                              <p class="fw-bold mb-1">John Doe</p>
+                              <p class="text-muted mb-0">john.doe@gmail.com</p>
+                            </div>
+                          </div>
+                        </td>
+                      
+                        <!-- <td>
+                          <span class="badge badge-success rounded-pill d-inline">Active</span>
+                        </td>
+                      -->
+                        <td>
+                          <div mdbDropdown class="btn-group">
+                            <button
+                              class="btn btn-primary btn-sm dropdown-toggle"
+                              type="button"
+                              mdbDropdownToggle
+                              aria-expanded="false"
+                            >
+                              Action
+                            </button>
+                            <ul mdbDropdownMenu class="dropdown-menu">
+                              <li><a class="dropdown-item reqaccept" href="#!">Accept</a></li>
+                              <li><a class="dropdown-item reqdecline" href="#!">Decline</a></li>
+                              <li><a class="dropdown-item reqhold" href="#!">Hold</a></li>
+                              <li><a class="dropdown-item" style="font-weight: 600;" href="#!">View Profile</a></li>
+                            </ul>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="d-flex align-items-center">
+                            <img
+                                src="https://mdbootstrap.com/img/new/avatars/6.jpg"
+                                class="rounded-circle"
+                                alt=""
+                                style="width: 45px; height: 45px"
+                                />
+                            <div class="ms-3">
+                              <p class="fw-bold mb-1">Alex Ray</p>
+                              <p class="text-muted mb-0">alex.ray@gmail.com</p>
+                            </div>
+                          </div>
+                        </td>
+                       
+                        <!-- <td>
+                          <span class="badge badge-primary rounded-pill d-inline"
+                                >Onboarding</span
+                            >
+                        </td> -->
+                     
+                        <td>
+                          <div mdbDropdown class="btn-group">
+                            <button
+                              class="btn btn-primary btn-sm dropdown-toggle"
+                              type="button"
+                              mdbDropdownToggle
+                              aria-expanded="false"
+                            >
+                              Action
+                            </button>
+                            <ul mdbDropdownMenu class="dropdown-menu">
+                              <li><a class="dropdown-item reqaccept" href="#!">Accept</a></li>
+                              <li><a class="dropdown-item reqdecline" href="#!">Decline</a></li>
+                              <li><a class="dropdown-item reqhold" href="#!">Hold</a></li>
+                              <li><a class="dropdown-item" style="font-weight: 600;" href="#!">View Profile</a></li>
+                            </ul>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="d-flex align-items-center">
+                            <img
+                                src="https://mdbootstrap.com/img/new/avatars/7.jpg"
+                                class="rounded-circle"
+                                alt=""
+                                style="width: 45px; height: 45px"
+                                />
+                            <div class="ms-3">
+                              <p class="fw-bold mb-1">Kate Hunington</p>
+                              <p class="text-muted mb-0">kate.hunington@gmail.com</p>
+                            </div>
+                          </div>
+                        </td>
+                       
+                        <!-- <td>
+                          <span class="badge badge-warning rounded-pill d-inline">Awaiting</span>
+                        </td> -->
+                     
+                        <td>
+                          <div mdbDropdown class="btn-group">
+                            <button
+                              class="btn btn-primary btn-sm dropdown-toggle"
+                              type="button"
+                              mdbDropdownToggle
+                              aria-expanded="false"
+                            >
+                              Action
+                            </button>
+                            <ul mdbDropdownMenu class="dropdown-menu">
+                              <li><a class="dropdown-item reqaccept" href="#!">Accept</a></li>
+                              <li><a class="dropdown-item reqdecline" href="#!">Decline</a></li>
+                              <li><a class="dropdown-item reqhold" href="#!">Hold</a></li>
+                              <li><a class="dropdown-item" style="font-weight: 600;" href="#!">View Profile</a></li>
+                              
+                            </ul>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  </div>
+                <!-- request end -->
+               
+            </div>
+            <div class="col-lg-8 ">
+            
+
+         
+
+              
+                <div class="row boxshadoww rowpadd">
+                  <p class="h4 headingtxt">Mentors</p>
+                  <p class="h6 headingtxt">You joined </p>
+                 
+                  <div class="col-lg-12">
+                    <mdb-tabs [justified]="true" class="bottomborder">  
+    
+                        <mdb-tab title="Today">
+                            <div class="row" >
+                            <div class="col-lg-6 col-6"></div>
+                                <div class="col-lg-6 col-6" style="text-align: right;">
+                                   <b>Filter By Course : </b> 
+                                    <div class="form-check form-check-inline">
+                                
+                                        <input
+                                          mdbRadio
+                                          class="form-check-input"
+                                          type="radio"
+                                          name="inlineRadioOptions"
+                                          id="inlineRadio1"
+                                          value="option1"
+                                        />
+                                        <label class="form-check-label" for="inlineRadio1">Course1</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input
+                                          mdbRadio
+                                          class="form-check-input"
+                                          type="radio"
+                                          name="inlineRadioOptions"
+                                          id="inlineRadio2"
+                                          value="option2"
+                                        />
+                                      <label class="form-check-label" for="inlineRadio2">Course2</label>
+                                      </div>
+                                </div>
+                            </div>
+                          
+                            <div class="row" >
+                                
+                                <div class="col-lg-6 col-12" style="padding: 2%;     font-size: 70%;">
+                                    <div class="row boxshadoww txtcntr">
+                                        <div class="col-lg-4 col-4 boxshadoww">
+                                       <img src="https://bootdey.com/img/Content/avatar/avatar7.png" style="width: -webkit-fill-available;     height: -webkit-fill-available;" alt="" class="img-responsive ">
+                                      <div class="col-lg-12">Mentor Name</div>
+                                    </div>
+                                        <div class="col-lg-8 col-8 boxshadoww">
+                                           <b><p>Course Title here</p></b>
+                                           <p>Sub Title here</p>
+                                           <p>Skills</p>
+                                            </div>
+                                            <div class="col-lg-12 col-12">
+                                                <div class="row">
+                                                    <div class="col-lg-4 col-4 boxshadoww"> Start : 23/01/2024</div>
+                                                    <div class="col-lg-4 col-4 boxshadoww">13 Sessions Done</div>
+                                                    <div class="col-lg-4 col-4 boxshadoww"><a class="joinn">&nbsp;View&nbsp;</a></div>
+                                                </div>
+                                              
+                                                </div>
+                                      
+    
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-12" style="padding: 2%;     font-size: 70%;">
+                                    <div class="row boxshadoww txtcntr">
+                                        <div class="col-lg-4 col-4 boxshadoww">
+                                       <img src="https://bootdey.com/img/Content/avatar/avatar7.png" style="width: -webkit-fill-available;     height: -webkit-fill-available;" alt="" class="img-responsive ">
+                                      <div class="col-lg-12">Mentor Name</div>
+                                    </div>
+                                        <div class="col-lg-8 col-8 boxshadoww">
+                                           <b><p>Course Title here</p></b>
+                                           <p>Sub Title here</p>
+                                           <p>Skills</p>
+                                            </div>
+                                            <div class="col-lg-12 col-12">
+                                                <div class="row">
+                                                    <div class="col-lg-4 col-4 boxshadoww"> Start : 23/01/2024</div>
+                                                    <div class="col-lg-4 col-4 boxshadoww">13 Sessions Done</div>
+                                                    <div class="col-lg-4 col-4 boxshadoww"><a class="joinn">&nbsp;View&nbsp;</a></div>
+                                                </div>
+                                              
+                                                </div>
+                                      
+    
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-12" style="padding: 2%;     font-size: 70%;">
+                                    <div class="row boxshadoww txtcntr">
+                                        <div class="col-lg-4 col-4 boxshadoww">
+                                       <img src="https://bootdey.com/img/Content/avatar/avatar7.png" style="width: -webkit-fill-available;     height: -webkit-fill-available;" alt="" class="img-responsive ">
+                                      <div class="col-lg-12">Mentor Name</div>
+                                    </div>
+                                        <div class="col-lg-8 col-8 boxshadoww">
+                                           <b><p>Course Title here</p></b>
+                                           <p>Sub Title here</p>
+                                           <p>Skills</p>
+                                            </div>
+                                            <div class="col-lg-12 col-12">
+                                                <div class="row">
+                                                    <div class="col-lg-4 col-4 boxshadoww"> Start : 23/01/2024</div>
+                                                    <div class="col-lg-4 col-4 boxshadoww">13 Sessions Done</div>
+                                                    <div class="col-lg-4 col-4 boxshadoww"><a class="joinn">&nbsp;View&nbsp;</a></div>
+                                                </div>
+                                              
+                                                </div>
+                                      
+    
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-12" style="padding: 2%;     font-size: 70%;">
+                                    <div class="row boxshadoww txtcntr">
+                                        <div class="col-lg-4 col-4 boxshadoww">
+                                       <img src="https://bootdey.com/img/Content/avatar/avatar7.png" style="width: -webkit-fill-available;     height: -webkit-fill-available;" alt="" class="img-responsive ">
+                                      <div class="col-lg-12">Mentor Name</div>
+                                    </div>
+                                        <div class="col-lg-8 col-8 boxshadoww">
+                                           <b><p>Course Title here</p></b>
+                                           <p>Sub Title here</p>
+                                           <p>Skills</p>
+                                            </div>
+                                            <div class="col-lg-12 col-12">
+                                                <div class="row">
+                                                    <div class="col-lg-4 col-4 boxshadoww"> Start : 23/01/2024</div>
+                                                    <div class="col-lg-4 col-4 boxshadoww">13 Sessions Done</div>
+                                                    <div class="col-lg-4 col-4 boxshadoww"><a class="joinn">&nbsp;View&nbsp;</a></div>
+                                                </div>
+                                              
+                                                </div>
+                                      
+    
+                                    </div>
+                                </div>
+                    
+                            </div>
+                            
+                        </mdb-tab>
+                   
+                   
+                      </mdb-tabs>
+                </div>
+
+              </div>
+              <div class="row boxshadoww rowpadd">
+                <p class="h4 headingtxt">Search</p>
+                <p class="h6 headingtxt">Mentors</p>
+               
+                <div class="col-lg-12" style="    text-align: center;">
+
+                  
+                 
+                  <button type="button" (click)="  openModalSearchMentor()" style="    padding-top: 1%;
+                  padding-bottom: 1%;" class="btn btn-primary btn-rounded" mdbRipple>Search Mentor</button>
+                </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+

@@ -417,6 +417,7 @@ li.timeline-item::before {
     display: block;
     margin: 10px 0;
     text-align: center;
+    font-size: small;
 }
 .description-block>.description-header {
     margin: 0;
@@ -445,3 +446,7 @@ li.timeline-item::before {
     border-radius: 10px;
     margin: 2%;
   }
+
+  mat-form-field{
+    width: 100% !important;
+}

@@ -40,4 +40,6 @@ export class LandingpageComponent {
         this.openModalWalk();
     
       }
+
+      
 }

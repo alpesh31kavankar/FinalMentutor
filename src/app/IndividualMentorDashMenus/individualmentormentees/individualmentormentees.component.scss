@@ -1,0 +1,197 @@
+// .modal-dialog-scrollable .modal-content {
+//     max-height: 100% !important;
+//     overflow: hidden !important;
+//     width: fit-content !important;
+//     display: flex !important;
+//     flex-direction: column !important;
+// }
+
+// chart css
+
+
+#divChart{
+    display: block;
+    width: 100%;
+    height: 400px;
+}
+
+
+
+// comon css start
+
+.rowpadd{
+    padding: 2%;
+}
+
+// counter start
+.g-hover-card {
+    position: relative;  
+    text-align: center;
+    background-color: #fff;
+  }
+  
+  .g-hover-card img {
+    width: 100%;
+    height: 80px;
+  }
+  
+  .g-hover-card .user-avatar {
+    position: relative;
+    top: -40px;
+    margin-bottom: -40px;
+  }
+  
+  .g-hover-card .user-avatar img {
+    width: 80px;
+    height: 80px;
+    max-width: 80px;
+    max-height: 80px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+  }
+  
+  .g-hover-card .info {
+    padding: 4px 8px 10px;
+  }
+  
+  .g-hover-card  .info.title {
+    margin-bottom: 4px;
+    font-size: 24px;
+    line-height: 1;
+    color: #262626;
+    vertical-align: middle;
+  }
+  
+  .g-hover-card  .info.descriptions {
+    overflow: hidden;
+    font-size: 12px;
+    line-height: 20px;
+    color: #737373;
+    text-overflow: ellipsis;
+  }
+  
+  .g-hover-card .bottom {
+    padding: 0 20px;
+    margin-bottom: 17px;
+  }
+  .g-hover-card{
+    width: 100%;
+    margin-bottom: 10%;
+    padding-top: 0;
+    overflow: hidden;
+  }
+
+
+  .counterspan{
+    font-size: 300%;
+    font-weight: 600;
+    font-family: ui-rounded;
+    color: #007bb9;
+    background-color: white;
+    border-radius: 59%;
+    padding: 5%;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px !important;
+
+  }
+// counter end
+
+
+// to be mentor request start
+td{
+  padding: 0rem 0rem !important;
+}
+.reqaccept{
+  color:green !important;
+  font-weight: 600 !important;
+}
+.reqdecline{
+  color:red !important;
+  font-weight: 600 !important;
+}
+.reqhold{
+  color:#b0b004  !important;
+  font-weight: 600 !important;
+}
+// request end
+
+
+// course slider start
+.carousel {
+  background: #EEE;
+}
+
+.carousel-cell {
+  width: 28%;
+  height: 200px;
+  text-align: center;
+
+  margin-right: 10px;
+  padding: 2%;
+  background: #8C8;
+  border-radius: 5px;
+  // counter-increment: carousel-cell;
+}
+
+.carousel-cell.is-selected {
+  background: #ED2;
+}
+
+/* cell number */
+.carousel-cell:before {
+  display: block;
+  text-align: center;
+  // content: counter(carousel-cell);
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+}
+
+.corsimage{
+  width: -webkit-fill-available !important;
+}
+
+.headingCrs{
+margin-top: 2% !important;
+font-size: 100% !important;
+}
+
+.crscontentdiv{
+  background-color: white;
+  border-radius: 0px 0px 7px 7px;
+  padding: 1%;
+}
+
+// couse slider end\\\\
+
+
+// .accordion-button::after {
+// display: none !important;
+//   }
+
+.mntrlst{
+  font-size: 70% !important;
+  text-align: left !important;
+  padding-top: 1% !important;
+    padding-bottom: 1% !important;
+}
+
+.upld{
+  padding: 2%;
+  border: 1px solid #3b71ca;
+  border-radius: 10px;
+}
+
+// upcomming session start
+section{
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+
+.joinn{
+    background-color: green;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+// upcomming session end

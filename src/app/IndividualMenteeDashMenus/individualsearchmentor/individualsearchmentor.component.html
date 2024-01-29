@@ -1,0 +1,283 @@
+
+
+<div class="modal-header">
+    <!-- <h5 class="modal-title" id="exampleModalPopoversLabel">Search Mentor</h5> -->
+    <p class="h4 headingtxt">Search New Mentors</p>
+    <button
+      type="button"
+      class="btn-close"
+      (click)="modalRef.close()"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="modal-body">
+
+    <section>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12">
+              <div class="row boxshadoww rowpadd fltrr" style="    justify-content: center;">
+                  <!-- <p class="h4 headingtxt">Search New Mentors</p>
+                  <p class="h6 headingtxt">Subtitle here </p> -->
+                  <div class="row ">
+                    <div class="col-lg-4 col-4" style="display: flex;     align-self: center;">
+                      <!-- Email input -->
+                      <mdb-form-control class="mb-4" style="    width: -webkit-fill-available;">
+                       <input mdbInput type="text" id="form2Example1" class="form-control" />
+                       <label mdbLabel class="form-label" for="form2Example1">Search Mentor...</label>
+                     </mdb-form-control>
+                     <button type="button" style="    height: fit-content;" class="btn btn-primary" mdbRipple>SEARCH</button>
+               </div>
+               <div class="col-lg-4 col-4">
+                 <mat-form-field>
+                   <mat-label>Industry</mat-label>
+                   <mat-select>
+               
+                       <mat-option [value]="1">one</mat-option>
+                       <mat-option [value]="2">Two</mat-option>
+                       <mat-option [value]="3">Three</mat-option>
+                
+                   </mat-select>
+                 </mat-form-field>
+               </div>
+               <div class="col-lg-4 col-4">
+                 <mat-form-field>
+                   <mat-label>Skill</mat-label>
+                   <mat-select>
+               
+                       <mat-option [value]="1">one</mat-option>
+                       <mat-option [value]="2">Two</mat-option>
+                       <mat-option [value]="3">Three</mat-option>
+                
+                   </mat-select>
+                 </mat-form-field>
+               </div>
+                  </div>
+     
+             
+                  </div>
+                  </div>
+                  </div>
+          <div class="row">
+          <div class="col-lg-12">
+              <div class="row boxshadoww rowpadd fltrr" style="    justify-content: center; padding: 2%;">
+                  <!-- <p class="h4 headingtxt">Your Active Courses</p>
+                  <p class="h6 headingtxt">Subtitle here </p> -->
+                  
+                  <div class="row">
+                   
+                    <div class="col-lg-6 col-12" style="padding: 2%;     font-size: 70%;">
+                      <div class="row boxshadoww txtcntr">
+                          <div class="col-lg-4 col-4 boxshadoww">
+                         <img src="https://bootdey.com/img/Content/avatar/avatar7.png" style="width: -webkit-fill-available;     height: -webkit-fill-available;" alt="" class="img-responsive ">
+                        <!-- <div class="col-lg-12">Mentor Name</div> -->
+                      </div>
+                          <div class="col-lg-8 col-8 boxshadoww">
+                            <b>Mentor Name</b><br>
+                             <!-- <p>Sub Title here</p> -->
+                             Skills<br>
+                             Courses :
+                             <div class="list-group list-group-light" style="overflow-y: scroll;     height: 65px;     border: 2px solid dodgerblue;     padding: 2%;
+                             ">
+                              <a href="#" style="    padding: 0px;" class="list-group-item list-group-item-action px-3 border-0 rounded-3 mb-2  list-group-item-info"
+                              >Course One</a>
+                              <a href="#" style="    padding: 0px;" class="list-group-item list-group-item-action px-3 border-0 rounded-3 mb-2  list-group-item-info"
+                              >Course Two</a>
+                              <a href="#" style="    padding: 0px;" class="list-group-item list-group-item-action px-3 border-0 rounded-3 mb-2  list-group-item-info"
+                              >Course Three</a>
+                          </div>
+                              </div>
+                              <div class="col-lg-12 col-12">
+                                <div class="row">
+                                  <div class="col-lg-4 col-4 boxshadoww"> Total Courses : 23</div>
+                                  <div class="col-lg-4 col-4 boxshadoww">4.5 <i class="fas fa-star"></i> Rating</div>
+                                  <div class="col-lg-4 col-4 boxshadoww"><a class="joinn">&nbsp;View&nbsp;</a></div>
+                              </div>
+                                
+                                  </div>
+                        
+          
+                      </div>
+                  </div>
+                  <div class="col-lg-6 col-12" style="padding: 2%;     font-size: 70%;">
+                    <div class="row boxshadoww txtcntr">
+                        <div class="col-lg-4 col-4 boxshadoww">
+                       <img src="https://bootdey.com/img/Content/avatar/avatar7.png" style="width: -webkit-fill-available;     height: -webkit-fill-available;" alt="" class="img-responsive ">
+                      <!-- <div class="col-lg-12">Mentor Name</div> -->
+                    </div>
+                        <div class="col-lg-8 col-8 boxshadoww">
+                          <b>Mentor Name</b><br>
+                           <!-- <p>Sub Title here</p> -->
+                           Skills<br>
+                           Courses :
+                           <div class="list-group list-group-light" style="overflow-y: scroll;    height: 65px;     border: 2px solid dodgerblue;     padding: 2%;
+                           ">
+                            <a href="#" style="    padding: 0px;" class="list-group-item list-group-item-action px-3 border-0 rounded-3 mb-2  list-group-item-info"
+                            >Course One</a>
+                            <a href="#" style="    padding: 0px;" class="list-group-item list-group-item-action px-3 border-0 rounded-3 mb-2  list-group-item-info"
+                            >Course Two</a>
+                            <a href="#" style="    padding: 0px;" class="list-group-item list-group-item-action px-3 border-0 rounded-3 mb-2  list-group-item-info"
+                            >Course Three</a>
+                        </div>
+                            </div>
+                            <div class="col-lg-12 col-12">
+                              <div class="row">
+                                <div class="col-lg-4 col-4 boxshadoww"> Total Courses : 23</div>
+                                <div class="col-lg-4 col-4 boxshadoww">4.5 <i class="fas fa-star"></i> Rating</div>
+                                <div class="col-lg-4 col-4 boxshadoww"><a class="joinn">&nbsp;View&nbsp;</a></div>
+                            </div>
+                              
+                                </div>
+                      
+        
+                    </div>
+                </div>
+                    
+                <div class="col-lg-6 col-12" style="padding: 2%;     font-size: 70%;">
+                  <div class="row boxshadoww txtcntr">
+                      <div class="col-lg-4 col-4 boxshadoww">
+                     <img src="https://bootdey.com/img/Content/avatar/avatar7.png" style="width: -webkit-fill-available;     height: -webkit-fill-available;" alt="" class="img-responsive ">
+                    <!-- <div class="col-lg-12">Mentor Name</div> -->
+                  </div>
+                      <div class="col-lg-8 col-8 boxshadoww">
+                        <b>Mentor Name</b><br>
+                         <!-- <p>Sub Title here</p> -->
+                         Skills<br>
+                         Courses :
+                         <div class="list-group list-group-light" style="overflow-y: scroll;     height: 65px;     border: 2px solid dodgerblue;     padding: 2%;
+                         ">
+                          <a href="#" style="    padding: 0px;" class="list-group-item list-group-item-action px-3 border-0 rounded-3 mb-2  list-group-item-info"
+                          >Course One</a>
+                          <a href="#" style="    padding: 0px;" class="list-group-item list-group-item-action px-3 border-0 rounded-3 mb-2  list-group-item-info"
+                          >Course Two</a>
+                          <a href="#" style="    padding: 0px;" class="list-group-item list-group-item-action px-3 border-0 rounded-3 mb-2  list-group-item-info"
+                          >Course Three</a>
+                      </div>
+                          </div>
+                          <div class="col-lg-12 col-12">
+                            <div class="row">
+                              <div class="col-lg-4 col-4 boxshadoww"> Total Courses : 23</div>
+                              <div class="col-lg-4 col-4 boxshadoww">4.5 <i class="fas fa-star"></i> Rating</div>
+                              <div class="col-lg-4 col-4 boxshadoww"><a class="joinn">&nbsp;View&nbsp;</a></div>
+                          </div>
+                            
+                              </div>
+                    
+      
+                  </div>
+              </div>
+              <div class="col-lg-6 col-12" style="padding: 2%;     font-size: 70%;">
+                <div class="row boxshadoww txtcntr">
+                    <div class="col-lg-4 col-4 boxshadoww">
+                   <img src="https://bootdey.com/img/Content/avatar/avatar7.png" style="width: -webkit-fill-available;     height: -webkit-fill-available;" alt="" class="img-responsive ">
+                  <!-- <div class="col-lg-12">Mentor Name</div> -->
+                </div>
+                    <div class="col-lg-8 col-8 boxshadoww">
+                      <b>Mentor Name</b><br>
+                       <!-- <p>Sub Title here</p> -->
+                       Skills<br>
+                       Courses :
+                       <div class="list-group list-group-light" style="overflow-y: scroll;     height: 65px;     border: 2px solid dodgerblue;     padding: 2%;
+                       ">
+                        <a href="#" style="    padding: 0px;" class="list-group-item list-group-item-action px-3 border-0 rounded-3 mb-2  list-group-item-info"
+                        >Course One</a>
+                        <a href="#" style="    padding: 0px;" class="list-group-item list-group-item-action px-3 border-0 rounded-3 mb-2  list-group-item-info"
+                        >Course Two</a>
+                        <a href="#" style="    padding: 0px;" class="list-group-item list-group-item-action px-3 border-0 rounded-3 mb-2  list-group-item-info"
+                        >Course Three</a>
+                    </div>
+                        </div>
+                        <div class="col-lg-12 col-12">
+                          <div class="row">
+                            <div class="col-lg-4 col-4 boxshadoww"> Total Courses : 23</div>
+                            <div class="col-lg-4 col-4 boxshadoww">4.5 <i class="fas fa-star"></i> Rating</div>
+                            <div class="col-lg-4 col-4 boxshadoww"><a class="joinn">&nbsp;View&nbsp;</a></div>
+                        </div>
+                          
+                            </div>
+                  
+    
+                </div>
+            </div>
+            <div class="col-lg-6 col-12" style="padding: 2%;     font-size: 70%;">
+              <div class="row boxshadoww txtcntr">
+                  <div class="col-lg-4 col-4 boxshadoww">
+                 <img src="https://bootdey.com/img/Content/avatar/avatar7.png" style="width: -webkit-fill-available;     height: -webkit-fill-available;" alt="" class="img-responsive ">
+                <!-- <div class="col-lg-12">Mentor Name</div> -->
+              </div>
+                  <div class="col-lg-8 col-8 boxshadoww">
+                    <b>Mentor Name</b><br>
+                     <!-- <p>Sub Title here</p> -->
+                     Skills<br>
+                     Courses :
+                     <div class="list-group list-group-light" style="overflow-y: scroll;    height: 65px;    border: 2px solid dodgerblue;     padding: 2%;
+                     ">
+                      <a href="#" style="    padding: 0px;" class="list-group-item list-group-item-action px-3 border-0 rounded-3 mb-2  list-group-item-info"
+                      >Course One</a>
+                      <a href="#" style="    padding: 0px;" class="list-group-item list-group-item-action px-3 border-0 rounded-3 mb-2  list-group-item-info"
+                      >Course Two</a>
+                      <a href="#" style="    padding: 0px;" class="list-group-item list-group-item-action px-3 border-0 rounded-3 mb-2  list-group-item-info"
+                      >Course Three</a>
+                  </div>
+                      </div>
+                      <div class="col-lg-12 col-12">
+                        <div class="row">
+                          <div class="col-lg-4 col-4 boxshadoww"> Total Courses : 23</div>
+                          <div class="col-lg-4 col-4 boxshadoww">4.5 <i class="fas fa-star"></i> Rating</div>
+                          <div class="col-lg-4 col-4 boxshadoww"><a class="joinn">&nbsp;View&nbsp;</a></div>
+                      </div>
+                        
+                          </div>
+                
+  
+              </div>
+          </div>
+          <div class="col-lg-6 col-12" style="padding: 2%;     font-size: 70%;">
+            <div class="row boxshadoww txtcntr">
+                <div class="col-lg-4 col-4 boxshadoww">
+               <img src="https://bootdey.com/img/Content/avatar/avatar7.png" style="width: -webkit-fill-available;     height: -webkit-fill-available;" alt="" class="img-responsive ">
+              <!-- <div class="col-lg-12">Mentor Name</div> -->
+            </div>
+                <div class="col-lg-8 col-8 boxshadoww">
+                  <b>Mentor Name</b><br>
+                   <!-- <p>Sub Title here</p> -->
+                   Skills<br>
+                   Courses :
+                   <div class="list-group list-group-light" style="overflow-y: scroll;    height: 65px;     border: 2px solid dodgerblue;     padding: 2%;
+                   ">
+                    <a href="#" style="    padding: 0px;" class="list-group-item list-group-item-action px-3 border-0 rounded-3 mb-2  list-group-item-info"
+                    >Course One</a>
+                    <a href="#" style="    padding: 0px;" class="list-group-item list-group-item-action px-3 border-0 rounded-3 mb-2  list-group-item-info"
+                    >Course Two</a>
+                    <a href="#" style="    padding: 0px;" class="list-group-item list-group-item-action px-3 border-0 rounded-3 mb-2  list-group-item-info"
+                    >Course Three</a>
+                </div>
+                    </div>
+                    <div class="col-lg-12 col-12">
+                      <div class="row">
+                        <div class="col-lg-4 col-4 boxshadoww"> Total Courses : 23</div>
+                        <div class="col-lg-4 col-4 boxshadoww">4.5 <i class="fas fa-star"></i> Rating</div>
+                        <div class="col-lg-4 col-4 boxshadoww"><a class="joinn">&nbsp;View&nbsp;</a></div>
+                    </div>
+                      
+                        </div>
+              
+
+            </div>
+        </div>
+                    </div>
+                  
+              </div>
+          </div>
+          </div>
+          </div>
+          </section>
+
+</div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modalRef.close()">
+      Close
+    </button>
+    <button type="button" class="btn btn-primary">Save changes</button>
+  </div>
+
