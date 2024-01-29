@@ -26,6 +26,17 @@ import { IndividualemailverifyotpComponent } from './Registration/individualemai
 import { IndividualforgotmailComponent } from './Registration/individualforgotmail/individualforgotmail.component';
 import { IndividualforgototpComponent } from './Registration/individualforgototp/individualforgototp.component';
 import { IndividualresetpasswordComponent } from './Registration/individualresetpassword/individualresetpassword.component';
+import { IndividualsearchcourseComponent } from './individualsearchcourse/individualsearchcourse.component';
+import { IndividualmenteementorComponent } from './IndividualMenteeDashMenus/individualmenteementor/individualmenteementor.component';
+import { IndividualmentorprofileComponent } from './IndividualMentorDashMenus/individualmentorprofile/individualmentorprofile.component';
+import { IndividualmentordashboardComponent } from './individualmentordashboard/individualmentordashboard.component';
+import { SidenavindividualmentorComponent } from './IndividualMentorDashMenus/sidenavindividualmentor/sidenavindividualmentor.component';
+import { IndividualmentorcourseComponent } from './IndividualMentorDashMenus/individualmentorcourse/individualmentorcourse.component';
+import { IndividualmentormenteesComponent } from './IndividualMentorDashMenus/individualmentormentees/individualmentormentees.component';
+import { IndividualmentorsessionsComponent } from './IndividualMentorDashMenus/individualmentorsessions/individualmentorsessions.component';
+import { IndividualmentorcontentComponent } from './IndividualMentorDashMenus/individualmentorcontent/individualmentorcontent.component';
+import { IndividualsearchmentorComponent } from './IndividualMenteeDashMenus/individualsearchmentor/individualsearchmentor.component';
+import { IndividualmentoraddcoursesComponent } from './IndividualMentorDashMenus/individualmentoraddcourses/individualmentoraddcourses.component';
 
 const routes: Routes = [
   { path: '',   redirectTo: '/Landingpage', pathMatch: 'full' },
@@ -53,11 +64,30 @@ const routes: Routes = [
   {path:'individualmenteeprofile',component:IndividualmenteeprofileComponent},
   {path:'individualmenteecourses',component:IndividualmenteecoursesComponent},
   {path:'individualmenteebusinessassociate',component:IndividualmenteebusinessassociateComponent},
+  // {path:'individualmenteementor',component:IndividualmenteementorComponent},
+  
 
   {path:'individualemailverifyotp',component:IndividualemailverifyotpComponent},
   {path:'individualforgotmail',component:IndividualforgotmailComponent},
   {path:'individualforgototp',component:IndividualforgototpComponent},
   {path:'individualresetpassword',component:IndividualresetpasswordComponent},
+  {path:'individualsearchcourse',component:IndividualsearchcourseComponent},
+  {path:'individualmenteementor',component:IndividualmenteementorComponent},
+
+  {path:'individualmentorprofile',component:IndividualmentorprofileComponent},
+  {path:'individualmentordashboard',component:IndividualmentordashboardComponent},
+  {path:'sidenavindividualmentor',component:SidenavindividualmentorComponent},
+
+  {path:'individualmentormentees',component:IndividualmentormenteesComponent},
+  {path:'individualmentorsessions',component:IndividualmentorsessionsComponent},
+  {path:'individualmentorcourse',component:IndividualmentorcourseComponent},
+  {path:'individualmentorcontent',component:IndividualmentorcontentComponent},
+  {path:'individualsearchmentor',component:IndividualsearchmentorComponent},
+  {path:'individualmentoraddcourses',component:IndividualmentoraddcoursesComponent},
+  
+  
+  
+  
 ];
 
 

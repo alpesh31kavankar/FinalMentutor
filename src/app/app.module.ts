@@ -40,7 +40,7 @@ import { MentordetailsComponent } from './CompanyAdminDashMenus/mentordetails/me
 import { UserdetailsComponent } from './Registration/userdetails/userdetails.component';
 
 // material
-
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import {MatInputModule} from '@angular/material/input';
 import {MatRadioModule} from '@angular/material/radio';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -63,6 +63,17 @@ import { IndividualforgototpComponent } from './Registration/individualforgototp
 import { IndividualresetpasswordComponent } from './Registration/individualresetpassword/individualresetpassword.component';
 import { IndividualforgotmailComponent } from './Registration/individualforgotmail/individualforgotmail.component';
 import { IndividualemailverifyotpComponent } from './Registration/individualemailverifyotp/individualemailverifyotp.component';
+import { IndividualsearchcourseComponent } from './individualsearchcourse/individualsearchcourse.component';
+import { IndividualmenteementorComponent } from './IndividualMenteeDashMenus/individualmenteementor/individualmenteementor.component';
+import { IndividualmentordashboardComponent } from './individualmentordashboard/individualmentordashboard.component';
+import { SidenavindividualmentorComponent } from './IndividualMentorDashMenus/sidenavindividualmentor/sidenavindividualmentor.component';
+import { IndividualmentorprofileComponent } from './IndividualMentorDashMenus/individualmentorprofile/individualmentorprofile.component';
+import { IndividualmentorcourseComponent } from './IndividualMentorDashMenus/individualmentorcourse/individualmentorcourse.component';
+import { IndividualmentorsessionsComponent } from './IndividualMentorDashMenus/individualmentorsessions/individualmentorsessions.component';
+import { IndividualmentormenteesComponent } from './IndividualMentorDashMenus/individualmentormentees/individualmentormentees.component';
+import { IndividualmentorcontentComponent } from './IndividualMentorDashMenus/individualmentorcontent/individualmentorcontent.component';
+import { IndividualsearchmentorComponent } from './IndividualMenteeDashMenus/individualsearchmentor/individualsearchmentor.component';
+import { IndividualmentoraddcoursesComponent } from './IndividualMentorDashMenus/individualmentoraddcourses/individualmentoraddcourses.component';
 
 
 @NgModule({
@@ -94,7 +105,18 @@ import { IndividualemailverifyotpComponent } from './Registration/individualemai
     IndividualforgototpComponent,
     IndividualresetpasswordComponent,
     IndividualforgotmailComponent,
-    IndividualemailverifyotpComponent
+    IndividualemailverifyotpComponent,
+    IndividualsearchcourseComponent,
+    IndividualmenteementorComponent,
+    IndividualmentordashboardComponent,
+    SidenavindividualmentorComponent,
+    IndividualmentorprofileComponent,
+    IndividualmentorcourseComponent,
+    IndividualmentorsessionsComponent,
+    IndividualmentormenteesComponent,
+    IndividualmentorcontentComponent,
+    IndividualsearchmentorComponent,
+    IndividualmentoraddcoursesComponent
   ],
   imports: [
     BrowserModule,
@@ -126,6 +148,8 @@ MatFormFieldModule,
 MatInputModule,
 MatSelectModule,
 MatRadioModule,
+MatDatepickerModule,
+
 
 
   ],

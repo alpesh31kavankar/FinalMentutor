@@ -1,0 +1,91 @@
+
+
+<div class="modal-header">
+    <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="#">
+      <img
+        src="\assets\Images\Logo\mentutorlogo.png"
+        height="20"
+        alt=""
+        loading="lazy"
+        style="margin-top: 2px;"
+      />
+    </a>
+      <button
+        type="button"
+        class="btn-close"
+        (click)="modalRef.close()"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="modal-body" style="    text-align: center;">
+     
+      <div class="boxshadoww roleoptions">
+  
+   
+       <img class="boxshadoww roleoptions"
+      src="\assets\Images\users\user1.jpg"
+      height=""
+      alt=""
+      loading="lazy"
+      style="margin-top: 2px;"
+    /> <br>
+  
+  <p class="h5 headingtxt">Omkar R. Kadam</p>
+  <p class="h6 headingtxt">Mentor Title here</p>
+      <button type="button" routerLink="/individualmentorprofile" style="    padding-top: 1%;
+      padding-bottom: 1%;" class="btn btn-primary btn-rounded" mdbRipple>View Profile</button>
+      </div>
+     
+      <hr />
+  
+      <a routerLink="/individualmentordashboard"  class="tooltip-test" mdbTooltip="Login as Mentee">   <p class="boxshadoww roleoptions">Dashboard</p></a>
+    
+      <hr />
+  
+      <a routerLink="/individualmentormentees"  class="tooltip-test" mdbTooltip="Login as Mentor">   <p class="boxshadoww roleoptions">Mentees</p></a>
+    <hr/>
+    <mdb-accordion>
+      <mdb-accordion-item>
+        <ng-template mdbAccordionItemHeader>Menus</ng-template>
+        <ng-template mdbAccordionItemBody>
+          <a routerLink="/individualmentormentees"  class="tooltip-test" mdbTooltip="Login as Mentor">   <p class="boxshadoww roleoptions">Mentees</p></a>
+          <hr/>
+          <a routerLink="/individualmentorcourse"  class="tooltip-test" mdbTooltip="Login as Mentor">   <p class="boxshadoww roleoptions">Courses</p></a>
+          <hr/>
+          <a routerLink="/individualmentorsessions"  class="tooltip-test" mdbTooltip="Login as Mentor">   <p class="boxshadoww roleoptions">Sessions</p></a>
+          <hr/>
+          <!-- <a routerLink="/individualmenteebusinessassociate"  class="tooltip-test" mdbTooltip="Login as Mentor">   <p class="boxshadoww roleoptions">Business Associate</p></a> -->
+          <!-- <hr/> -->
+          <a routerLink="/individualmentorcontent"  class="tooltip-test" mdbTooltip="Login as Mentor">   <p class="boxshadoww roleoptions">Content</p></a>
+          <hr/>
+        </ng-template>
+      </mdb-accordion-item>
+    
+      <mdb-accordion-item>
+        <ng-template mdbAccordionItemHeader>Reports</ng-template>
+        <ng-template mdbAccordionItemBody>
+          <a routerLink="/Login"  class="tooltip-test" mdbTooltip="Login as Mentor">   <p class="boxshadoww roleoptions">History & Reports</p></a>
+          <hr/>
+          <a routerLink="/Login"  class="tooltip-test" mdbTooltip="Login as Mentor">   <p class="boxshadoww roleoptions">System Performance</p></a>
+          <hr/>
+        </ng-template>
+      </mdb-accordion-item>
+    
+      <mdb-accordion-item>
+        <ng-template mdbAccordionItemHeader>Settings</ng-template>
+        <ng-template mdbAccordionItemBody>
+          <a routerLink="/Login"  class="tooltip-test" mdbTooltip="Login as Mentor">   <p class="boxshadoww roleoptions">Setting one</p></a>
+          <hr/>
+          <a routerLink="/Login"  class="tooltip-test" mdbTooltip="Login as Mentor">   <p class="boxshadoww roleoptions">Setting two</p></a>
+          <hr/>
+        </ng-template>
+      </mdb-accordion-item>
+    </mdb-accordion>
+  </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="modalRef.close()">
+        Close
+      </button>
+      <button type="button" class="btn btn-primary">Save</button>
+    </div>
+  
