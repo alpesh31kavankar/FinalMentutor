@@ -37,6 +37,9 @@ import { IndividualmentorsessionsComponent } from './IndividualMentorDashMenus/i
 import { IndividualmentorcontentComponent } from './IndividualMentorDashMenus/individualmentorcontent/individualmentorcontent.component';
 import { IndividualsearchmentorComponent } from './IndividualMenteeDashMenus/individualsearchmentor/individualsearchmentor.component';
 import { IndividualmentoraddcoursesComponent } from './IndividualMentorDashMenus/individualmentoraddcourses/individualmentoraddcourses.component';
+import { IndividualaddsessionComponent } from './IndividualMentorDashMenus/individualaddsession/individualaddsession.component';
+import { IndividualmenteeplansComponent } from './IndividualMenteeDashMenus/individualmenteeplans/individualmenteeplans.component';
+import { IndividualmentorplansComponent } from './IndividualMentorDashMenus/individualmentorplans/individualmentorplans.component';
 
 const routes: Routes = [
   { path: '',   redirectTo: '/Landingpage', pathMatch: 'full' },
@@ -84,9 +87,10 @@ const routes: Routes = [
   {path:'individualmentorcontent',component:IndividualmentorcontentComponent},
   {path:'individualsearchmentor',component:IndividualsearchmentorComponent},
   {path:'individualmentoraddcourses',component:IndividualmentoraddcoursesComponent},
-  
-  
-  
+  {path:'individualaddsession',component:IndividualaddsessionComponent},
+  {path:'individualmenteeplans',component:IndividualmenteeplansComponent},
+  {path:'individualmentorplans',component:IndividualmentorplansComponent},
+
   
 ];
 

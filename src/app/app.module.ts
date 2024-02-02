@@ -74,6 +74,17 @@ import { IndividualmentormenteesComponent } from './IndividualMentorDashMenus/in
 import { IndividualmentorcontentComponent } from './IndividualMentorDashMenus/individualmentorcontent/individualmentorcontent.component';
 import { IndividualsearchmentorComponent } from './IndividualMenteeDashMenus/individualsearchmentor/individualsearchmentor.component';
 import { IndividualmentoraddcoursesComponent } from './IndividualMentorDashMenus/individualmentoraddcourses/individualmentoraddcourses.component';
+import { IndividualaddsessionComponent } from './IndividualMentorDashMenus/individualaddsession/individualaddsession.component';
+
+import {MatNativeDateModule} from '@angular/material/core';
+import { IndividualmentorplansComponent } from './IndividualMentorDashMenus/individualmentorplans/individualmentorplans.component';
+import { IndividualmenteeplansComponent } from './IndividualMenteeDashMenus/individualmenteeplans/individualmenteeplans.component';
+
+// 
+import {Component, ElementRef, ViewChild} from '@angular/core';
+import {FormControl, ReactiveFormsModule} from '@angular/forms';
+import {NgFor, AsyncPipe} from '@angular/common';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 
 @NgModule({
@@ -116,7 +127,10 @@ import { IndividualmentoraddcoursesComponent } from './IndividualMentorDashMenus
     IndividualmentormenteesComponent,
     IndividualmentorcontentComponent,
     IndividualsearchmentorComponent,
-    IndividualmentoraddcoursesComponent
+    IndividualmentoraddcoursesComponent,
+    IndividualaddsessionComponent,
+    IndividualmentorplansComponent,
+    IndividualmenteeplansComponent
   ],
   imports: [
     BrowserModule,
@@ -150,7 +164,15 @@ MatSelectModule,
 MatRadioModule,
 MatDatepickerModule,
 
+MatNativeDateModule,
 
+FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule,
+    NgFor,
+    AsyncPipe,
 
   ],
   providers: [

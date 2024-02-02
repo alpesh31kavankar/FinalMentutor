@@ -3,14 +3,14 @@
     <div class="container-fluid">
         <div class="row boxshadoww">
             <p class="h4 headingtxt">Upcomming Sessions</p>
-            <p class="h6 headingtxt">Subtitle here </p>
+            <p class="h6 headingtxt"><a class="tooltip-test" mdbTooltip="Add New session" (click)="openModalAddSession()"><i style="    font-size: 160%; cursor: pointer;" class="fas fa-plus-square"></i></a></p>
             <div class="col-lg-12">
                 <mdb-tabs [justified]="true" class="bottomborder">  
 
                     <mdb-tab title="Today">
                         <div class="row" >
-                        <div class="col-lg-6 col-6"></div>
-                            <div class="col-lg-6 col-6" style="text-align: right;">
+                        <div class="col-lg-6 col-12"></div>
+                            <div class="col-lg-6 col-12" style="text-align: right;">
                                <b>Filter By Course : </b> 
                                 <div class="form-check form-check-inline">
                             
@@ -239,8 +239,8 @@
                     </mdb-tab>
                     <mdb-tab title="25th Jan 24">
                         <div class="row" >
-                            <div class="col-lg-6 col-6"></div>
-                                <div class="col-lg-6 col-6" style="text-align: right;">
+                            <div class="col-lg-6 col-12"></div>
+                                <div class="col-lg-6 col-12" style="text-align: right;">
                                    <b>Filter By Course : </b> 
                                     <div class="form-check form-check-inline">
                                 
@@ -341,8 +341,8 @@
                     </mdb-tab>
                     <mdb-tab title="All Session">
                         <div class="row" >
-                            <div class="col-lg-6 col-6"></div>
-                                <div class="col-lg-6 col-6" style="text-align: right;">
+                            <div class="col-lg-6 col-12"></div>
+                                <div class="col-lg-6 col-12" style="text-align: right;">
                                    <b>Filter By Course : </b> 
                                     <div class="form-check form-check-inline">
                                 
@@ -431,8 +431,8 @@
                         <p class="h6 headingtxt">By Mentees </p>
                         <div class="col-lg-12">
                             <div class="row" >
-                                <div class="col-lg-6 col-6"></div>
-                                    <div class="col-lg-6 col-6" style="text-align: right;">
+                                <div class="col-lg-6 col-12"></div>
+                                    <div class="col-lg-6 col-12" style="text-align: right;">
                                        <b>Filter By Course : </b> 
                                        <div class="form-check form-check-inline">
                                     
@@ -472,7 +472,7 @@
                                     </div>
                                 </div>
                             <div class="row">
-                                <div class="col-lg-3 col-12" style="padding: 2%;     font-size: 70%;">
+                                <div class="col-lg-3 col-12 paddingmobdesk" style="     font-size: 70%;">
                                     <div class="row boxshadoww txtcntr">
                                      
                                         <div class="col-lg-12 col-12 boxshadoww">
@@ -499,7 +499,7 @@
                                     </div>
                                 </div>
 
-                            <div class="col-lg-3 col-12" style="padding: 2%;     font-size: 70%;">
+                            <div class="col-lg-3 col-12 paddingmobdesk" style="     font-size: 70%;">
                                 <div class="row boxshadoww txtcntr">
                                  
                                     <div class="col-lg-12 col-12 boxshadoww">
@@ -526,7 +526,7 @@
                                 </div>
                             </div>
                             
-                            <div class="col-lg-3 col-12" style="padding: 2%;     font-size: 70%;">
+                            <div class="col-lg-3 col-12 paddingmobdesk" style="    font-size: 70%;">
                                 <div class="row boxshadoww txtcntr">
                                  
                                     <div class="col-lg-12 col-12 boxshadoww">
@@ -552,7 +552,7 @@
 
                                 </div>
                             </div>
-                            <div class="col-lg-3 col-12" style="padding: 2%;     font-size: 70%;">
+                            <div class="col-lg-3 col-12 paddingmobdesk" style="     font-size: 70%;">
                                 <div class="row boxshadoww txtcntr">
                                  
                                     <div class="col-lg-12 col-12 boxshadoww">
@@ -596,24 +596,24 @@
                                     <div class="main-box-body clearfix">
                                         <div class="table-responsive">
                                             <div class="row">
-                                                <div class="col-lg-6 col-6"></div>
-                                                <div class="col-lg-6 col-6" style="text-align: right;">
+                                                <div class="col-lg-6 col-12"></div>
+                                                <div class="col-lg-6 col-12" style="text-align: right;">
                                                 <mat-form-field>
                                                     <mat-label>Filter by Course</mat-label>
                                                     <mat-select matNativeControl required>
-                                                      <mat-option value="volvo">Course1</mat-option>
-                                                      <mat-option value="saab">Course2</mat-option>
-                                                      <mat-option value="mercedes">Course3</mat-option>
-                                                      <mat-option value="audi">Course4</mat-option>
+                                                      <mat-option value="volvo">Fullstack Java</mat-option>
+                                                      <mat-option value="saab">SEO</mat-option>
+                                                      <mat-option value="mercedes">UI UX Design</mat-option>
+                                                      <mat-option value="audi">Digital marketing</mat-option>
                                                     </mat-select>
                                                   </mat-form-field>
                                                   <mat-form-field>
                                                   <mat-label>Filter by Course</mat-label>
                                                   <mat-select matNativeControl required>
-                                                    <mat-option value="volvo">Course1</mat-option>
-                                                    <mat-option value="saab">Course2</mat-option>
-                                                    <mat-option value="mercedes">Course3</mat-option>
-                                                    <mat-option value="audi">Course4</mat-option>
+                                                    <mat-option value="volvo">Fullstack Java</mat-option>
+                                                    <mat-option value="saab">SEO</mat-option>
+                                                    <mat-option value="mercedes">UI UX Design</mat-option>
+                                                    <mat-option value="audi">Digital marketing</mat-option>
                                                   </mat-select>
                                                 </mat-form-field>
                                                 </div>

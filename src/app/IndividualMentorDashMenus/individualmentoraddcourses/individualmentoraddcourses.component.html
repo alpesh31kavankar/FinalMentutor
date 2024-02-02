@@ -19,95 +19,82 @@
                   
                     <form class="boxshadoww  fltrr rowpadd" style="    border-radius: 10px; padding: 5%;">
                         <!-- 2 column grid layout with text inputs for the first and last names -->
-                        <div class="row mb-4">
-                          <div class="col">
+                        <div class="row">
+                          <div class="col-lg-3 pdingone">
                             <mdb-form-control>
                               <input mdbInput type="text" id="form6Example1" class="form-control" />
                               <label mdbLabel class="form-label" for="form6Example1">Title</label>
                             </mdb-form-control>
                           </div>
-                          <div class="col">
+                          <div class="col-lg-3 pdingone">
                             <mdb-form-control>
                               <input mdbInput type="text" id="form6Example2" class="form-control" />
                               <label mdbLabel class="form-label" for="form6Example2">Sub Title</label>
                             </mdb-form-control>
                           </div>
-                          <div class="col">
+                          <div class="col-lg-3 pdingone">
                             <mdb-form-control>
                               <input mdbInput type="text" id="form6Example2" class="form-control" />
                               <label mdbLabel class="form-label" for="form6Example2">Price</label>
                             </mdb-form-control>
                           </div>
-                          <div class="col">
+                          <div class="col-lg-3 pdingone">
                             <mdb-form-control>
                               <input mdbInput type="text" id="form6Example2" class="form-control" />
                               <label mdbLabel class="form-label" for="form6Example2">Duration</label>
                             </mdb-form-control>
                           </div>
                           </div>
-                             <!-- <div class="row mb-4">
-                          <div class="col">
-                            <mat-form-field>
-                                <mat-label>Start Date</mat-label>
-                                <input matInput [matDatepicker]="picker">
-                                <mat-hint>MM/DD/YYYY</mat-hint>
-                                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-                                <mat-datepicker #picker></mat-datepicker>
-                              </mat-form-field>
-                        
-                        </div>
-                        <div class="col">
-                            <mat-form-field>
-                                <mat-label>End Date</mat-label>
-                                <input matInput [matDatepicker]="picker">
-                                <mat-hint>MM/DD/YYYY</mat-hint>
-                                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-                                <mat-datepicker #picker></mat-datepicker>
-                              </mat-form-field>
-                        
-                        </div>
 
-                        </div> -->
-                        <div class="row mb-4">
-                            <div class="col">
-                                <mat-form-field>
-                                  <mat-label>Skill</mat-label>
-                                  <mat-select matNativeControl required>
-                                    <mat-option value="volvo">India</mat-option>
-                                    <mat-option value="saab">US</mat-option>
-                                    <mat-option value="mercedes">Dubai</mat-option>
-                                    <mat-option value="audi">Srilanka</mat-option>
-                                  </mat-select>
+                          <div class="row">
+                            <div class="col-lg-4 pdingone">
+                              <mat-form-field>
+                                <mat-label>Skill</mat-label>
+                                <mat-select matNativeControl required>
+                                  <mat-option value="volvo">Java</mat-option>
+                                  <mat-option value="saab">Python</mat-option>
+                                  <mat-option value="mercedes">Accounting</mat-option>
+                                  <mat-option value="audi">AI</mat-option>
+                                </mat-select>
+                              </mat-form-field>
+                            </div>
+
+                            <div class="col-lg-4 pdingone">
+                              <mat-form-field>
+                                  <mat-label>Start Date</mat-label>
+                                  <input matInput [matDatepicker]="picker">
+                                  <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+                                  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                                  <mat-datepicker #picker></mat-datepicker>
                                 </mat-form-field>
-                              </div>
-   <div class="col">
-                                       <!-- Message input -->
+                            </div>
+                            <div class="col-lg-4 pdingone">
+                                <mat-form-field>
+                                  <mat-label>End Date</mat-label>
+                                  <input matInput [matDatepicker]="picker">
+                                  <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+                                  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                                  <mat-datepicker #picker></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+
+
+                            <div class="col-lg-6 pdingone">
+                                                            <!-- Message input -->
               <mdb-form-control class="form-outline mb-4">
-              <textarea mdbInput class="form-control" id="form6Example7" rows="4"></textarea>
-              <label mdbLabel class="form-label" for="form6Example7">Description</label>
-              </mdb-form-control>
-                                </div>
-                              <div class="col">
+                <textarea mdbInput class="form-control" id="form6Example7" rows="4"></textarea>
+                <label mdbLabel class="form-label" for="form6Example7">Description</label>
+                </mdb-form-control>
+                              </div>
+
+                              <div class="col-lg-6 pdingone">
                                 <mdb-form-control class="mb-4">
                                   <!-- <label class="form-label" for="customFile">Mentors Excel sheet</label> -->
                   <input type="file" class="form-control" id="customFile" accept=".xlsx" />
                   </mdb-form-control> 
-                                </div>
-
-                             
-                        </div>
-                  
-              
-                      
-              
-              
-              
-         
-              
-              
+                              </div>
+                            </div>
              
-                 
-                      
                         <!-- Submit button -->
                         <button mdbRipple  type="button" class="btn btn-primary btn-block mb-4" >
                        Add Course
@@ -125,7 +112,7 @@
                     <div class="row">
                      
                       <div class="col-lg-3 col-4 bottomborder topborder boxshadoww clientpadd txtt" style="    font-size: 66%;">
-                        <img class="clientlogo" style="    border-radius: 0px 0px 10px 10px;" src="\assets\Images\Logo\tata.jpg"  alt="...">
+                        <img class="clientlogo" style="    border-radius: 0px 0px 10px 10px;" src="/assets/Images/Course/crs/2.jpg"  alt="...">
                       <div class="row">
                        <div class="col-lg-6 col-6 brder">₹2000</div>
                        <div class="col-lg-6 col-6 brder">Java</div>
@@ -135,7 +122,7 @@
                      </div>
   
                       <div class="col-lg-3 col-4 bottomborder topborder boxshadoww clientpadd txtt" style="    font-size: 66%;">
-                        <img class="clientlogo" style="    border-radius: 0px 0px 10px 10px;" src="\assets\Images\Logo\birla.jpg"  alt="...">
+                        <img class="clientlogo" style="    border-radius: 0px 0px 10px 10px;" src="/assets/Images/Course/crs/3.jpg"  alt="...">
                       <div class="row">
                        <div class="col-lg-6 col-6 brder">₹2000</div>
                        <div class="col-lg-6 col-6 brder">Java</div>
@@ -145,7 +132,7 @@
                      </div>
                       
                      <div class="col-lg-3 col-4 bottomborder topborder boxshadoww clientpadd txtt" style="    font-size: 66%;">
-                      <img class="clientlogo" style="    border-radius: 0px 0px 10px 10px;" src="\assets\Images\Logo\tata.jpg"  alt="...">
+                      <img class="clientlogo" style="    border-radius: 0px 0px 10px 10px;" src="/assets/Images/Course/crs/4.jpg"  alt="...">
                     <div class="row">
                      <div class="col-lg-6 col-6 brder">₹2000</div>
                      <div class="col-lg-6 col-6 brder">Java</div>
@@ -154,7 +141,7 @@
                     </div>
                    </div>
                    <div class="col-lg-3 col-4 bottomborder topborder boxshadoww clientpadd txtt" style="    font-size: 66%;">
-                     <img class="clientlogo" style="    border-radius: 0px 0px 10px 10px;" src="\assets\Images\Logo\birla.jpg"  alt="...">
+                     <img class="clientlogo" style="    border-radius: 0px 0px 10px 10px;" src="/assets/Images/Course/crs/5.jpg"  alt="...">
                    <div class="row">
                     <div class="col-lg-6 col-6 brder">₹2000</div>
                     <div class="col-lg-6 col-6 brder">Java</div>
@@ -163,7 +150,7 @@
                    </div>
                   </div>
                   <div class="col-lg-3 col-4 bottomborder topborder boxshadoww clientpadd txtt" style="    font-size: 66%;">
-                    <img class="clientlogo" style="    border-radius: 0px 0px 10px 10px;" src="\assets\Images\Logo\tata.jpg"  alt="...">
+                    <img class="clientlogo" style="    border-radius: 0px 0px 10px 10px;" src="/assets/Images/Course/crs/6.jpg"  alt="...">
                   <div class="row">
                    <div class="col-lg-6 col-6 brder">₹2000</div>
                    <div class="col-lg-6 col-6 brder">Java</div>
@@ -172,7 +159,7 @@
                   </div>
                  </div>
                  <div class="col-lg-3 col-4 bottomborder topborder boxshadoww clientpadd txtt" style="    font-size: 66%;">
-                    <img class="clientlogo" style="    border-radius: 0px 0px 10px 10px;" src="\assets\Images\Logo\birla.jpg"  alt="...">
+                    <img class="clientlogo" style="    border-radius: 0px 0px 10px 10px;" src="/assets/Images/Course/crs/2.jpg"  alt="...">
                   <div class="row">
                    <div class="col-lg-6 col-6 brder">₹2000</div>
                    <div class="col-lg-6 col-6 brder">Java</div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IndividualsearchcourseComponent } from '../../individualsearchcourse/individualsearchcourse.component';
 import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
 
@@ -7,7 +7,7 @@ import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
   templateUrl: './individualmenteecourses.component.html',
   styleUrls: ['./individualmenteecourses.component.scss']
 })
-export class IndividualmenteecoursesComponent {
+export class IndividualmenteecoursesComponent implements OnInit{
   modalRefWalkk: MdbModalRef<IndividualsearchcourseComponent> | null = null;
   constructor(private modalService: MdbModalService) {}
 
@@ -20,5 +20,21 @@ export class IndividualmenteecoursesComponent {
     })
   }
   
+    // to load modal css and js
+    public loadScript() {
+      let body = <HTMLDivElement> document.body;
+      let script = document.createElement('script');
+      script.innerHTML = '';
+      script.src = '/assets/js/flickity.pkgd.min.js';
+      script.async = true;
+      script.defer = true;
+      body.appendChild(script);
+  }
 
+  ngOnInit(): void {
+    this.loadScript();
+// this.Chartshow();
+    // this.openModal();
+
+  }
 }
