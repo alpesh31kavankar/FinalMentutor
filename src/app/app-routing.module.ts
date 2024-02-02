@@ -72,8 +72,16 @@ const routes: Routes = [
 
   {path:'individualemailverifyotp',component:IndividualemailverifyotpComponent},
   {path:'individualforgotmail',component:IndividualforgotmailComponent},
+
   {path:'individualforgototp',component:IndividualforgototpComponent},
   {path:'individualresetpassword',component:IndividualresetpasswordComponent},
+
+
+  
+  {path:'Selectrolemodal',component:SelectrolemodalComponent},
+
+  // {path:'individualforgototp',component:IndividualforgototpComponent},
+  // {path:'individualresetpassword',component:IndividualresetpasswordComponent},
   {path:'individualsearchcourse',component:IndividualsearchcourseComponent},
   {path:'individualmenteementor',component:IndividualmenteementorComponent},
 
@@ -87,11 +95,13 @@ const routes: Routes = [
   {path:'individualmentorcontent',component:IndividualmentorcontentComponent},
   {path:'individualsearchmentor',component:IndividualsearchmentorComponent},
   {path:'individualmentoraddcourses',component:IndividualmentoraddcoursesComponent},
+
   {path:'individualaddsession',component:IndividualaddsessionComponent},
   {path:'individualmenteeplans',component:IndividualmenteeplansComponent},
   {path:'individualmentorplans',component:IndividualmentorplansComponent},
 
   
+
 ];
 
 
