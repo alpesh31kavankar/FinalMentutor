@@ -1,85 +1,86 @@
-<section>
-    <div class="container-fluid">
-        <div class="row" style="    justify-content: center;">
-          <div class="col-lg-3 col-3">
-            <img class="clientlogo" src="\assets\Images\Homebanner\content.jpg" style="      height: 100%;  width: 100%;     border-radius: 10px 0px 0px 10px;" alt="...">
-          </div>
-            <div class="col-lg-5 col-5">
-              
+
     
-                  <form class="boxshadoww" style="    border-radius: 0px 10px 10px 0px; padding: 5%;">
-                    <!-- Email input -->
-                    <mdb-form-control class="mb-4">
-                      <input mdbInput type="email" id="form2Example1"type="email"[(ngModel)]="searchText1" #EmailControl="ngModel" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" name="Email" class="form-control" />
-                      <label mdbLabel class="form-label" for="form2Example1">Email address</label>
-                    </mdb-form-control>
-                  
-                    <!-- Password input -->
-                    <mdb-form-control class="mb-4">
-                      <input mdbInput type="password" [(ngModel)]="searchText2" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}" name="Password" #passwordControl="ngModel"id="form2Example2" class="form-control" />
-                      <label mdbLabel class="form-label" for="form2Example2">Password</label>
-                    </mdb-form-control>
-                  
-                    <!-- 2 column grid layout for inline styling -->
-                    <div class="row mb-4">
-                      <div class="col d-flex justify-content-center">
-                        <!-- Checkbox -->
-                        <div class="form-check">
-                          <input
-                            mdbCheckbox
-                            class="form-check-input"
-                            type="checkbox"
-                            value=""
-                            id="form2Example31"
-                            [checked]="true"
-                          />
-                          <label class="form-check-label" for="form2Example31"> Remember me </label>
+
+
+
+    <!-- login -->
+
+
+
+    <section>
+      <div class="container-fluid">
+          <div class="row " style="    justify-content: center;">
+            <div class="col-lg-3 col-3 logimage">
+              <img class="clientlogo bottomborder topborder" src="\assets\Images\Homebanner\content.jpg" style="      height: 100%;  width: 100%;     border-radius: 10px 0px 0px 10px;" alt="...">
+            </div>
+              <div class="col-lg-5 col-12 ">
+                
+      
+                    <form class="bottomborder topborder boxshadoww" style="    border-radius: 0px 10px 10px 0px; padding: 5%;">
+                      <!-- Email input -->
+                      <mdb-form-control class="mb-4">
+                        <input mdbInput type="email" id="form2Example1" type="email"[(ngModel)]="searchText1" #EmailControl="ngModel" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" name="Email" class="form-control" />
+                        <label mdbLabel class="form-label" for="form2Example1">Email address</label>
+                      </mdb-form-control>
+                    
+                      <!-- Password input -->
+                      <mdb-form-control class="mb-4">
+                        <input mdbInput type="password" id="form2Example2"[(ngModel)]="searchText2" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}" name="Password" #passwordControl="ngModel"id="form2Example2" class="form-control" />
+                        <label mdbLabel class="form-label" for="form2Example2">Password</label>
+                      </mdb-form-control>
+                    
+                      <!-- 2 column grid layout for inline styling -->
+                      <div class="row mb-4">
+                        <div class="col d-flex justify-content-center">
+                          <!-- Checkbox -->
+                          <div class="form-check">
+                            <input
+                              mdbCheckbox
+                              class="form-check-input"
+                              type="checkbox"
+                              value=""
+                              id="form2Example31"
+                              [checked]="true"
+                            />
+                            <label class="form-check-label" for="form2Example31"> Remember me </label>
+                          </div>
+                        </div>
+                    
+                        <div class="col">
+                          <!-- Simple link -->
+                          <a routerLink="/individualforgotmail">Forgot password?</a>
                         </div>
                       </div>
-                  
-                      <div class="col">
-                        <!-- Simple link -->
-                        <a routerLink="/individualforgotmail">Forgot password?</a>
+                    
+                      <!-- Submit button -->
+                      <button mdbRipple type="button" (click)="OnSubmit()" class="btn btn-primary btn-block mb-4">Sign in</button>
+                    
+                      <!-- Register buttons -->
+                      <div class="text-center">
+                        <p>Not a member? <a routerLink="/individualsignup">Register</a></p>
+                        <p>or sign in with:</p>
+                        <button mdbRipple type="button" class="btn btn-secondary btn-floating mx-1">
+                          <i class="fab fa-facebook-f"></i>
+                        </button>
+                    
+                        <button mdbRipple type="button" class="btn btn-secondary btn-floating mx-1">
+                          <!-- <i class="fab fa-google"></i> -->
+                          <asl-google-signin-button *ngIf="!user"></asl-google-signin-button>
+                        </button>
+                    
+                        <button mdbRipple type="button" class="btn btn-secondary btn-floating mx-1">
+                          <i class="fab fa-twitter"></i>
+                        </button>
+                    
+                        <button mdbRipple type="button" class="btn btn-secondary btn-floating mx-1">
+                          <i class="fab fa-github"></i>
+                        </button>
                       </div>
-                    </div>
-                  
-                    <!-- Submit button -->
-<!-- <<<<<<< HEAD -->
-                    <button mdbRipple type="button" (click)="OnSubmit()" class="btn btn-primary btn-block mb-4">Sign in</button>
-<!-- ======= -->
-                    <button mdbRipple type="button" routerLink="/individualuserdetails"  class="btn btn-primary btn-block mb-4">Sign in</button>
-<!-- >>>>>>> 1d721883ad4c8d376f25d5acfec2a30138ad844b -->
-                  
-                    <!-- Register buttons -->
-                    <div class="text-center">
-                      <p>Not a member? <a routerLink="/individualsignup">Register</a></p>
-                      <p>or sign in with:</p>
-
-                      <asl-google-signin-button *ngIf="!user"></asl-google-signin-button>
-
-
-                      <button mdbRipple type="button" class="btn btn-secondary btn-floating mx-1">
-                        <i class="fab fa-facebook-f"></i>
-                      </button>
-                  
-                      <button mdbRipple type="button" class="btn btn-secondary btn-floating mx-1">
-                        <i class="fab fa-google"*ngIf="!user"></i>
-                      </button>
-                      
-                  
-                      <button mdbRipple type="button" class="btn btn-secondary btn-floating mx-1">
-                        <i class="fab fa-twitter"></i>
-                      </button>
-                  
-                      <button mdbRipple type="button" class="btn btn-secondary btn-floating mx-1">
-                        <i class="fab fa-github"></i>
-                      </button>
-                    </div>
-                  </form>
-    
-            </div>
-        </div>
-    </div>
-    </section>
-    
-    
+                    </form>
+      
+              </div>
+          </div>
+      </div>
+      </section>
+      
+      

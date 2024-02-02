@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { IndividualselectroleComponent } from '../../individualselectrole/individualselectrole.component';
 import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
 import { HttpClient } from '@angular/common/http';
 import { UserDetail } from 'src/app/Class';
 import { ActivatedRoute, Router } from '@angular/router';
 import { WebService } from 'src/app/Service';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-individualuserdetails',
@@ -12,6 +13,13 @@ import { WebService } from 'src/app/Service';
   styleUrls: ['./individualuserdetails.component.scss']
 })
 export class IndividualuserdetailsComponent {
+
+  //  @ViewChild('input') input: ElementRef<HTMLInputElement>;
+  // myControl = new FormControl();
+  // options: string[] = ['Option 1', 'Option 2', 'Option 3'];
+  // filteredOptions: string[];
+
+
   modalRef: MdbModalRef<IndividualselectroleComponent> | null = null;
 
   UId:any
@@ -23,14 +31,17 @@ export class IndividualuserdetailsComponent {
 
   userDetailsList:any[]
   userDetailmainList:any[]
-  //  countries:any[]
+   countries:any[]
   
   constructor(private modalService: MdbModalService,private route: ActivatedRoute,private router: Router,
     private http: HttpClient,
     private service: WebService) {
+
+      //  this.filteredOptions = this.options.slice();
+
       this.userDetail = new UserDetail();
-    // this.countries=[]
-    // this.getcountryData();
+    this.countries=[]
+    this.getcountryData();
     this.userDetailsList=[]
     this.userDetailmainList=[]
         this.route.params.subscribe((params) => {
@@ -58,16 +69,26 @@ export class IndividualuserdetailsComponent {
               })
   }
 
-  // getcountryData(){
+  getcountryData(){
   
-  //   this.http.get('assets/json/country.json').subscribe((data) => {
+    this.http.get('assets/json/country.json').subscribe((data) => {
       
-  //   this.countries.push(data);
-  //   console.log("Allcountrylist is ",this.countries)
+    this.countries.push(data);
+    console.log("Allcountrylist is ",this.countries)
     
-  //   });
+    });
    
-  //     }
+      }
+
+
+      // trackOption(index: number, option: string): string {
+      //   return option;
+      // }
+      // filter(): void {
+      //   const filterValue = this.input.nativeElement.value.toLowerCase();
+      //   this.filteredOptions = this.options.filter(o => o.toLowerCase().includes(filterValue));
+      // }
+
   OnSubmit() {
     this.userDetail.RegistrationId=this.UId
     this.userDetail.CountryId=1

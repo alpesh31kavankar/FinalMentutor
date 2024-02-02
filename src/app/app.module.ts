@@ -41,6 +41,7 @@ import { MentordetailsComponent } from './CompanyAdminDashMenus/mentordetails/me
 import { UserdetailsComponent } from './Registration/userdetails/userdetails.component';
 
 // material
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import {MatInputModule} from '@angular/material/input';
 import {MatRadioModule} from '@angular/material/radio';
@@ -57,7 +58,7 @@ import { IndividualmenteecoursesComponent } from './IndividualMenteeDashMenus/in
 import { IndividualmenteesessionsComponent } from './IndividualMenteeDashMenus/individualmenteesessions/individualmenteesessions.component';
 import { IndividualmenteebusinessassociateComponent } from './IndividualMenteeDashMenus/individualmenteebusinessassociate/individualmenteebusinessassociate.component';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { IndividualforgototpComponent } from './Registration/individualforgototp/individualforgototp.component';
@@ -84,6 +85,7 @@ import { IndividualmentormenteesComponent } from './IndividualMentorDashMenus/in
 import { IndividualmentorcontentComponent } from './IndividualMentorDashMenus/individualmentorcontent/individualmentorcontent.component';
 import { IndividualsearchmentorComponent } from './IndividualMenteeDashMenus/individualsearchmentor/individualsearchmentor.component';
 import { IndividualmentoraddcoursesComponent } from './IndividualMentorDashMenus/individualmentoraddcourses/individualmentoraddcourses.component';
+import { AsyncPipe } from '@angular/common';
 
 
 
@@ -164,8 +166,10 @@ MatRadioModule,
 
 MatDatepickerModule,
 
+MatAutocompleteModule,
 
-
+AsyncPipe,
+ReactiveFormsModule
 
   ],
   providers: [

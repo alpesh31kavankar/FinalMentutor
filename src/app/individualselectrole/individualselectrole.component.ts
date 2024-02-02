@@ -59,7 +59,7 @@ export class IndividualselectroleComponent {
           }
           console.log("this.MentorId", this.MentorId);
           localStorage.setItem('MentorId', this.MentorId);
-          this.router.navigateByUrl("/MentorDashboard");
+          this.router.navigateByUrl("/individualmentordashboard");
         }
         else {
           this.mentorProfile.RegistrationId = this.UId
@@ -78,7 +78,7 @@ export class IndividualselectroleComponent {
   
               alert('Saved Successfully.');
               localStorage.setItem('MentorId', result);
-              this.router.navigateByUrl("/MentorDashboard");
+              this.router.navigateByUrl("/individualmentordashboard");
   
             }
             else {

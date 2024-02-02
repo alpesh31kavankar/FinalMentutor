@@ -170,3 +170,50 @@ text-align: center !important;
     padding: 2%;
     height: 100%;
 }
+
+
+#myChart{
+  display: block !important;
+  box-sizing: border-box !important;
+  height: 400px !important;
+  width: 100% !important;
+}
+
+.pdingone{
+      padding: 1% !important;
+}
+
+.paddingmobdesk{
+  padding: 2% !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .paddingmobdesk{
+    padding: 7% !important;
+  }
+}
+
+
+.modal-dialog-scrollable .modal-content > :first-child {
+  max-height: 100%;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 600px) {
+  .crscontentdiv{
+    font-size: 70% !important;
+  }
+  .headingtxtt{
+    font-size: 70% !important;
+  }
+.logimage{
+  display: none !important;
+}
+}
+
+

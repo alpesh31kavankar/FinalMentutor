@@ -1,51 +1,48 @@
-
-
 <div class="modal-header">
-    <p class="h4 headingtxt">Add New Courses</p>
-      <button
-        type="button"
-        class="btn-close"
-        (click)="modalRef.close()"
-        aria-label="Close"
-      ></button>
-    </div>
-    <div class="modal-body">
-  
-      <section>
-        <div class="container-fluid">
-            <div class="row" style="    justify-content: center;">
-         
-                <div class="col-lg-12 col-12">
-                  
-                    <form class="boxshadoww  fltrr rowpadd" style="    border-radius: 10px; padding: 5%;">
-                        <!-- 2 column grid layout with text inputs for the first and last names -->
-                        <div class="row mb-4">
-                          <div class="col">
-                            <mdb-form-control>
-                              <input mdbInput type="text" id="form6Example1" class="form-control" />
-                              <label mdbLabel class="form-label" for="form6Example1">Title</label>
-                            </mdb-form-control>
-                          </div>
-                          <div class="col">
-                            <mdb-form-control>
-                              <input mdbInput type="text" id="form6Example2" class="form-control" />
-                              <label mdbLabel class="form-label" for="form6Example2">Sub Title</label>
-                            </mdb-form-control>
-                          </div>
-                          <div class="col">
-                            <mdb-form-control>
-                              <input mdbInput type="text" id="form6Example2" class="form-control" />
-                              <label mdbLabel class="form-label" for="form6Example2">Price</label>
-                            </mdb-form-control>
-                          </div>
-                          <div class="col">
-                            <mdb-form-control>
-                              <input mdbInput type="text" id="form6Example2" class="form-control" />
-                              <label mdbLabel class="form-label" for="form6Example2">Duration</label>
-                            </mdb-form-control>
-                          </div>
-                          </div>
-                             <!-- <div class="row mb-4">
+  <p class="h4 headingtxt">Add New Courses</p>
+  <button type="button" class="btn-close" (click)="modalRef.close()" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+
+  <section>
+    <div class="container-fluid">
+      <div class="row" style="    justify-content: center;">
+
+        <div class="col-lg-12 col-12">
+
+          <form class="boxshadoww  fltrr rowpadd" style="    border-radius: 10px; padding: 5%;">
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <div class="row mb-4">
+              <div class="col">
+                <mdb-form-control>
+                  <input mdbInput type="text" id="form6Example1" name="Title" [(ngModel)]="course.Title"
+                    class="form-control" />
+                  <label mdbLabel class="form-label" for="form6Example1">Title</label>
+                </mdb-form-control>
+              </div>
+              <div class="col">
+                <mdb-form-control>
+                  <input mdbInput type="text" id="form6Example2" name="SubTitle" [(ngModel)]="course.SubTitle"
+                    class="form-control" />
+                  <label mdbLabel class="form-label" for="form6Example2">Sub Title</label>
+                </mdb-form-control>
+              </div>
+              <div class="col">
+                <mdb-form-control>
+                  <input mdbInput type="text" id="form6Example2" name="Price" [(ngModel)]="course.Price"
+                    class="form-control" />
+                  <label mdbLabel class="form-label" for="form6Example2">Price</label>
+                </mdb-form-control>
+              </div>
+              <div class="col">
+                <mdb-form-control>
+                  <input mdbInput type="text" id="form6Example2" name="Duration" [(ngModel)]="course.Duration"
+                    class="form-control" />
+                  <label mdbLabel class="form-label" for="form6Example2">Duration</label>
+                </mdb-form-control>
+              </div>
+            </div>
+            <!-- <div class="row mb-4">
                           <div class="col">
                             <mat-form-field>
                                 <mat-label>Start Date</mat-label>
@@ -68,9 +65,9 @@
                         </div>
 
                         </div> -->
-                        <div class="row mb-4">
-                            <div class="col">
-                                <mat-form-field>
+            <div class="row mb-4">
+              <div class="col">
+                <!-- <mat-form-field>
                                   <mat-label>Skill</mat-label>
                                   <mat-select matNativeControl required>
                                     <mat-option value="volvo">India</mat-option>
@@ -78,63 +75,72 @@
                                     <mat-option value="mercedes">Dubai</mat-option>
                                     <mat-option value="audi">Srilanka</mat-option>
                                   </mat-select>
-                                </mat-form-field>
-                              </div>
-   <div class="col">
-                                       <!-- Message input -->
-              <mdb-form-control class="form-outline mb-4">
-              <textarea mdbInput class="form-control" id="form6Example7" rows="4"></textarea>
-              <label mdbLabel class="form-label" for="form6Example7">Description</label>
-              </mdb-form-control>
-                                </div>
-                              <div class="col">
-                                <mdb-form-control class="mb-4">
-                                  <!-- <label class="form-label" for="customFile">Mentors Excel sheet</label> -->
-                  <input type="file" class="form-control" id="customFile" accept=".xlsx" />
-                  </mdb-form-control> 
-                                </div>
+                                </mat-form-field> -->
+                <select placeholder="MainCategory" [(ngModel)]="course.mentorSkill.MentorSkillId" name="MentorSkillId"
+                  #TitleControl="ngModel">
+                  <option *ngFor="let mentorSkill of mentorSkillList" [value]="mentorSkill.MentorSkillId">
+                    {{mentorSkill.skill.Title}}</option>
 
-                             
-                        </div>
-                  
-              
-                      
-              
-              
-              
-         
-              
-              
-             
-                 
-                      
-                        <!-- Submit button -->
-                        <button mdbRipple  type="button" class="btn btn-primary btn-block mb-4" >
-                       Add Course
-                        </button>
-                      </form>
-              
+                </select>
+              </div>
+              <div class="col">
+                <!-- Message input -->
+                <mdb-form-control class="form-outline mb-4">
+                  <textarea mdbInput class="form-control" id="form6Example7" name="Description"
+                    [(ngModel)]="course.Description" rows="4"></textarea>
+                  <label mdbLabel class="form-label" for="form6Example7">Description</label>
+                </mdb-form-control>
+              </div>
+              <div class="col">
+                <mdb-form-control class="mb-4">
+                  <!-- <label class="form-label" for="customFile">Mentors Excel sheet</label> -->
+                  <input type="file" class="form-control" name="Photo" [(ngModel)]="course.Photo"
+                    (change)="fileChangeEvent($event)" #PhotoControl="ngModel" accept="image/png, image/jpeg" />
+                </mdb-form-control>
+              </div>
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- Submit button -->
+            <button mdbRipple (click)="OnSubmit();" type="button" class="btn btn-primary btn-block mb-4">
+              Add Course
+            </button>
+          </form>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row boxshadoww rowpadd fltrr" style="    justify-content: center; padding: 2%;">
+            <!-- <p class="h4 headingtxt">Your Active Courses</p>
+                    <p class="h6 headingtxt">Subtitle here </p> -->
+
+            <div class="row"*ngFor="let i of courseList">
+
+              <div class="col-lg-3 col-4 bottomborder topborder boxshadoww clientpadd txtt" style="    font-size: 66%;">
+                <img class="clientlogo" style="    border-radius: 0px 0px 10px 10px;" src="\assets\Images\Logo\tata.jpg"
+                  alt="...">
+                <div class="row">
+                  <div class="col-lg-6 col-6 brder">₹{{i.Price}}</div>
+                  <div class="col-lg-6 col-6 brder">{{i.mentorSkill.skill.Title}}</div>
+                  <div class="col-lg-12 brder txtcntr">{{i.SubTitle}}</div>
+                  <div class="col-lg-12  txtcntr"><a href="#!">View</a></div>
                 </div>
               </div>
-            <div class="row">
-            <div class="col-lg-12">
-                <div class="row boxshadoww rowpadd fltrr" style="    justify-content: center; padding: 2%;">
-                    <!-- <p class="h4 headingtxt">Your Active Courses</p>
-                    <p class="h6 headingtxt">Subtitle here </p> -->
-                    
-                    <div class="row">
-                     
-                      <div class="col-lg-3 col-4 bottomborder topborder boxshadoww clientpadd txtt" style="    font-size: 66%;">
-                        <img class="clientlogo" style="    border-radius: 0px 0px 10px 10px;" src="\assets\Images\Logo\tata.jpg"  alt="...">
-                      <div class="row">
-                       <div class="col-lg-6 col-6 brder">₹2000</div>
-                       <div class="col-lg-6 col-6 brder">Java</div>
-                       <div class="col-lg-12 brder txtcntr">Fullstack Angular</div>
-                       <div class="col-lg-12  txtcntr"><a href="#!">View</a></div>
-                      </div>
-                     </div>
-  
-                      <div class="col-lg-3 col-4 bottomborder topborder boxshadoww clientpadd txtt" style="    font-size: 66%;">
+
+              <!-- <div class="col-lg-3 col-4 bottomborder topborder boxshadoww clientpadd txtt" style="    font-size: 66%;">
                         <img class="clientlogo" style="    border-radius: 0px 0px 10px 10px;" src="\assets\Images\Logo\birla.jpg"  alt="...">
                       <div class="row">
                        <div class="col-lg-6 col-6 brder">₹2000</div>
@@ -143,57 +149,59 @@
                        <div class="col-lg-12  txtcntr"><a href="#!">View</a></div>
                       </div>
                      </div>
-                      
-                     <div class="col-lg-3 col-4 bottomborder topborder boxshadoww clientpadd txtt" style="    font-size: 66%;">
-                      <img class="clientlogo" style="    border-radius: 0px 0px 10px 10px;" src="\assets\Images\Logo\tata.jpg"  alt="...">
-                    <div class="row">
-                     <div class="col-lg-6 col-6 brder">₹2000</div>
-                     <div class="col-lg-6 col-6 brder">Java</div>
-                     <div class="col-lg-12 brder txtcntr">Fullstack Angular</div>
-                     <div class="col-lg-12  txtcntr"><a href="#!">View</a></div>
-                    </div>
-                   </div>
-                   <div class="col-lg-3 col-4 bottomborder topborder boxshadoww clientpadd txtt" style="    font-size: 66%;">
-                     <img class="clientlogo" style="    border-radius: 0px 0px 10px 10px;" src="\assets\Images\Logo\birla.jpg"  alt="...">
-                   <div class="row">
-                    <div class="col-lg-6 col-6 brder">₹2000</div>
-                    <div class="col-lg-6 col-6 brder">Java</div>
-                    <div class="col-lg-12 brder txtcntr">Fullstack Angular</div>
-                    <div class="col-lg-12  txtcntr"><a href="#!">View</a></div>
-                   </div>
-                  </div>
-                  <div class="col-lg-3 col-4 bottomborder topborder boxshadoww clientpadd txtt" style="    font-size: 66%;">
-                    <img class="clientlogo" style="    border-radius: 0px 0px 10px 10px;" src="\assets\Images\Logo\tata.jpg"  alt="...">
-                  <div class="row">
-                   <div class="col-lg-6 col-6 brder">₹2000</div>
-                   <div class="col-lg-6 col-6 brder">Java</div>
-                   <div class="col-lg-12 brder txtcntr">Fullstack Angular</div>
-                   <div class="col-lg-12  txtcntr"><a href="#!">View</a></div>
-                  </div>
-                 </div>
-                 <div class="col-lg-3 col-4 bottomborder topborder boxshadoww clientpadd txtt" style="    font-size: 66%;">
-                    <img class="clientlogo" style="    border-radius: 0px 0px 10px 10px;" src="\assets\Images\Logo\birla.jpg"  alt="...">
-                  <div class="row">
-                   <div class="col-lg-6 col-6 brder">₹2000</div>
-                   <div class="col-lg-6 col-6 brder">Java</div>
-                   <div class="col-lg-12 brder txtcntr">Fullstack Angular</div>
-                   <div class="col-lg-12  txtcntr"><a href="#!">View</a></div>
-                  </div>
-                 </div>
-                      </div>
-                    
+
+               <div class="col-lg-3 col-4 bottomborder topborder boxshadoww clientpadd txtt" style="    font-size: 66%;">
+                <img class="clientlogo" style="    border-radius: 0px 0px 10px 10px;" src="\assets\Images\Logo\tata.jpg"
+                  alt="...">
+                <div class="row">
+                  <div class="col-lg-6 col-6 brder">₹2000</div>
+                  <div class="col-lg-6 col-6 brder">Java</div>
+                  <div class="col-lg-12 brder txtcntr">Fullstack Angular</div>
+                  <div class="col-lg-12  txtcntr"><a href="#!">View</a></div>
                 </div>
+              </div>
+              <div class="col-lg-3 col-4 bottomborder topborder boxshadoww clientpadd txtt" style="    font-size: 66%;">
+                <img class="clientlogo" style="    border-radius: 0px 0px 10px 10px;"
+                  src="\assets\Images\Logo\birla.jpg" alt="...">
+                <div class="row">
+                  <div class="col-lg-6 col-6 brder">₹2000</div>
+                  <div class="col-lg-6 col-6 brder">Java</div>
+                  <div class="col-lg-12 brder txtcntr">Fullstack Angular</div>
+                  <div class="col-lg-12  txtcntr"><a href="#!">View</a></div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-4 bottomborder topborder boxshadoww clientpadd txtt" style="    font-size: 66%;">
+                <img class="clientlogo" style="    border-radius: 0px 0px 10px 10px;" src="\assets\Images\Logo\tata.jpg"
+                  alt="...">
+                <div class="row">
+                  <div class="col-lg-6 col-6 brder">₹2000</div>
+                  <div class="col-lg-6 col-6 brder">Java</div>
+                  <div class="col-lg-12 brder txtcntr">Fullstack Angular</div>
+                  <div class="col-lg-12  txtcntr"><a href="#!">View</a></div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-4 bottomborder topborder boxshadoww clientpadd txtt" style="    font-size: 66%;">
+                <img class="clientlogo" style="    border-radius: 0px 0px 10px 10px;"
+                  src="\assets\Images\Logo\birla.jpg" alt="...">
+                <div class="row">
+                  <div class="col-lg-6 col-6 brder">₹2000</div>
+                  <div class="col-lg-6 col-6 brder">Java</div>
+                  <div class="col-lg-12 brder txtcntr">Fullstack Angular</div>
+                  <div class="col-lg-12  txtcntr"><a href="#!">View</a></div>
+                </div>
+              </div> -->
             </div>
-            </div>
-            </div>
-            </section>
-  
-  </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" (click)="modalRef.close()">
-        Close
-      </button>
-      <button type="button" class="btn btn-primary">Save changes</button>
+
+          </div>
+        </div>
+      </div>
     </div>
-  
-  
+  </section>
+
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="modalRef.close()">
+    Close
+  </button>
+  <button type="button" class="btn btn-primary">Save changes</button>
+</div>

@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row" style="    justify-content: center;">
          
-            <div class="col-lg-8 col-8">
+            <div class="col-lg-8 col-12">
               
                 <form class="boxshadoww bottomborder topborder" style="    border-radius: 10px; padding: 5%;">
                     <!-- 2 column grid layout with text inputs for the first and last names -->
@@ -26,17 +26,12 @@
                         <mat-form-field>
                           <mat-label>Country</mat-label>
                           <mat-select matNativeControl required>
-                            <mat-option value="volvo">India</mat-option>
-                            <mat-option value="saab">US</mat-option>
-                            <mat-option value="mercedes">Dubai</mat-option>
-                            <mat-option value="audi">Srilanka</mat-option>
+                            <mat-option value="volvo">Maharashtra</mat-option>
+                            <mat-option value="saab">Dehli</mat-option>
+                            <mat-option value="mercedes">Panjab</mat-option>
+                            <mat-option value="audi">Goa</mat-option>
                           </mat-select>
                         </mat-form-field>
-                        <!-- <select id="CountryId" [(ngModel)]="userDetail.CountryId" name="CountryId">
-                          <option *ngFor="let c of countries" [value]="c.id">
-                            {{c.name}}
-                          </option>
-                        </select> -->
                       </div>
                       <div class="col">
                         <mat-form-field>
@@ -159,4 +154,19 @@
     </div>
     </section>
     
+    <!-- Control value: {{ myControl.value || 'empty' }}
+    <mat-form-field class="example-full-width">
+      <mat-label>Number</mat-label>
+      <input #input
+             type="text"
+             placeholder="Pick one"
+             matInput
+             [formControl]="myControl"
+             [matAutocomplete]="auto"
+             (input)="filter()"
+             (focus)="filter()">
+      <mat-autocomplete requireSelection #auto="matAutocomplete">
     
+        <mat-option *ngFor="let option of options; trackBy: trackOption" [value]="option">{{ option }}</mat-option>
+      </mat-autocomplete>
+    </mat-form-field> -->

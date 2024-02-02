@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 // import { SidenavcompanyadminComponent } from '../sidenavcompanyadmin/sidenavcompanyadmin.component';
 import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
 import { Chart, registerables } from 'chart.js';
+import { ActivatedRoute, Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { WebService } from '../Service';
+import { MentorProfile } from '../Class';
 Chart.register(...registerables);
 declare const $:any;
 
@@ -12,10 +16,23 @@ declare const $:any;
 })
 export class IndividualmentordashboardComponent implements OnInit{
 
- 
-  constructor(private modalService: MdbModalService) {
- 
-  }
+  UId: any
+  SId: any
+  mentorProfile: MentorProfile  
+
+    constructor(private modalService: MdbModalService,private route: ActivatedRoute, private router: Router,
+      private http: HttpClient,
+      private service: WebService) {
+        this.mentorProfile = new MentorProfile();
+  
+      this.route.params.subscribe((params) => {
+        debugger
+        this.UId = JSON.parse(localStorage.getItem('SID'));
+        this.SId = JSON.parse(localStorage.getItem('MentorId'));
+        console.log("UserId", this.UId)
+        console.log("SId", this.SId)
+      });
+    }
 
     // to load modal css and js
     public loadScript() {

@@ -1,4 +1,8 @@
 
+
+
+
+
   <!-- <div class="modal-body"> -->
     <div class="container">
         <div class="team-single boxshadoww prof">
@@ -103,14 +107,14 @@
                         <div class="row mb-4">
                           <div class="col">
                             <mdb-form-control>
-                              <input mdbInput type="text" id="form3Example1" class=" form-control" name="FName"    onkeypress="return (event.charCode > 64 && 
+                              <input mdbInput type="text" id="form3Example1"[(ngModel)]="registration.FName" class=" form-control" name="FName"    onkeypress="return (event.charCode > 64 && 
                               event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)" required />
                               <label mdbLabel class="form-label" for="form3Example1">First name</label>
                             </mdb-form-control>
                           </div>
                           <div class="col">
                             <mdb-form-control class="form-outline">
-                              <input mdbInput type="text" id="form3Example2" class="form-control" name="LName"    onkeypress="return (event.charCode > 64 && 
+                              <input mdbInput type="text" id="form3Example2" [(ngModel)]="registration.LName" class="form-control" name="LName"    onkeypress="return (event.charCode > 64 && 
                               event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)" required />
                               <label mdbLabel class="form-label" for="form3Example2">Last name</label>
                             </mdb-form-control>
@@ -119,14 +123,14 @@
                       
                         <!-- Email input -->
                         <mdb-form-control class="mb-4">
-                          <input mdbInput type="email" id="form3Example3" class="form-control" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" name="Email"  required />
+                          <input mdbInput type="email" id="form3Example3" [(ngModel)]="registration.Email" class="form-control" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" name="Email"  />
                           <label mdbLabel class="form-label" for="form3Example3">Email address</label>
                         </mdb-form-control>
                       
                         <!-- Password input -->
                         <mdb-form-control class="mb-4">
                           <input mdbInput type="password" id="form3Example4" class="form-control"
-                           pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}" name="Password" required />
+                           pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}"[(ngModel)]="registration.Password" name="Password" required />
                           <label mdbLabel class="form-label" for="form3Example4">Password</label>
                         </mdb-form-control>
                       
@@ -459,64 +463,49 @@ value="option3"
             <!-- 2 column grid layout with text inputs for the first and last names -->
             <div class="row mb-4">
                 <div class="col">
-                    <mat-form-field>
-                      <mat-label>Subcategory</mat-label>
-                      <mat-select matNativeControl required>
-                        <mat-option value="volvo">India</mat-option>
-                        <mat-option value="saab">US</mat-option>
-                        <mat-option value="mercedes">Dubai</mat-option>
-                        <mat-option value="audi">Srilanka</mat-option>
-                      </mat-select>
-                    </mat-form-field>
+                    <!-- <mat-form-field> -->
+                      <mat-label>Skill</mat-label>
+                      <!-- <mat-select matNativeControl required>
+                        <mat-option value="volvo">Java</mat-option>        
+                      </mat-select> -->
+
+                      <select  placeholder="Skill"[(ngModel)]="mentorSkill.skill.SkillId"  name="SkillId"  required>
+                        <option *ngFor="let i of skillList" [value]="i.SkillId" >
+                          {{i.Title}}</option>                       
+                        </select> 
+                      
+                    <!-- </mat-form-field> -->
                   </div>
-                  <div class="col">
-                    <mat-form-field>
-                      <mat-label>Status</mat-label>
-                      <mat-select matNativeControl required>
-                        <mat-option value="volvo">India</mat-option>
-                        <mat-option value="saab">US</mat-option>
-                        <mat-option value="mercedes">Dubai</mat-option>
-                        <mat-option value="audi">Srilanka</mat-option>
-                      </mat-select>
-                    </mat-form-field>
-                  </div>
+       
           
              
             </div>
+
             <div class="row mb-4">
-            <div class="col">
-                <mdb-form-control>
-                  <input mdbInput type="text" id="form6Example1" class="form-control" />
-                  <label mdbLabel class="form-label" for="form6Example1">Title</label>
-                </mdb-form-control>
+              <div class="col">
+                <!-- <mat-form-field> -->
+                  <mat-label>Status</mat-label>
+                  <select matNativeControl name="Status"   [(ngModel)]="mentorSkill.Status" required>
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>               
+                  </select>
+                <!-- </mat-form-field> -->
               </div>
+
               </div>
+       
       
             <div class="row mb-4">
               <div class="col">
                 <mdb-form-control class="mb-4">
-                  <!-- <label class="form-label" for="customFile">Certificate</label> -->
-<input type="file" class="form-control" id="customFile" accept=".xlsx" />
+                  <label class="form-label" for="customFile">Certificate</label>
+<input type="file" class="form-control" id="customFile" style="    border: 1px solid darkgrey;
+background-color: #007bb92e;" name="Certificate"  [(ngModel)]="mentorSkill.Certificate"  (change)="fileChangeEvent($event)" #PhotoControl="ngModel"accept=".pdf" />
 </mdb-form-control> 
                 </div>
-                <div class="col">
-                    <mdb-form-control class="mb-4">
-                      <!-- <label class="form-label" for="customFile">Photo</label> -->
-    <input type="file" class="form-control" id="customFile" accept="" />
-    </mdb-form-control> 
-                    </div>
-                
-
-
+           
                 </div>
-                <div class="row mb-4">
-                    <div class="col">
-                        <mdb-form-control class="form-outline mb-4">
-                            <textarea mdbInput class="form-control" id="form6Example7" rows="4"></textarea>
-                            <label mdbLabel class="form-label" for="form6Example7">Description</label>
-                            </mdb-form-control>
-                    </div>
-                </div>
+          
           
 
 
@@ -524,7 +513,7 @@ value="option3"
      
           
             <!-- Submit button -->
-            <button mdbRipple  type="button" class="btn btn-primary btn-block mb-4" >
+            <button mdbRipple  (click)="AddNewSkill();"type="button" class="btn btn-primary btn-block mb-4" >
            Add Skill
             </button>
           </form>
