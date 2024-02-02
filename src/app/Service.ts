@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { HttpHeaders } from '@angular/common/http';
 
 import { GlobalVariable } from './Global';
-import { FeedBack, Login, MenteeProfile, MenteeSkill, MentorPlan, MentorProfile, MentorSkill, Registration, Session, UserDetail } from './Class';
+import { Course, FeedBack, Login, MenteeProfile, MenteeSkill, MentorPlan, MentorProfile, MentorSkill, Registration, Session, UserDetail } from './Class';
 
 @Injectable({
     providedIn: 'root'
@@ -115,6 +115,11 @@ export class WebService {
     UpdateMentorSkill(MentorSkill): Observable<any> {
         return this.http.post<MentorSkill>(GlobalVariable.SERVICE_API_URL + "MentorSkill/UpdateMentorSkill", MentorSkill, this.httpOptions);
     }
+    SaveMentorSkillImage(formdata, MentorSkillId): Observable<any> {
+        const uploadReq = new HttpRequest('Post', GlobalVariable.SERVICE_API_URL + "MentorSkill/SaveMentorSkillImage?MentorSkillId=" + MentorSkillId, formdata, null);
+        return this.http.request(uploadReq);
+    }
+
 
  // MentorSkill
  AddMentorPlan(MentorPlan): Observable<any> {
@@ -194,5 +199,25 @@ AddMenteeProfile(MenteeProfile): Observable<any> {
 AddMentorProfile(MentorProfile): Observable<any> {
     return this.http.post<MentorProfile>(GlobalVariable.SERVICE_API_URL + "MentorProfile/AddMentorProfile", MentorProfile, this.httpOptions);
 }
+
+
+//Skill
+GetAllSkill() {
+    return this.http.get<any>(GlobalVariable.SERVICE_API_URL + "Skill/GetAllSkill", this.httpOptions);
+}
+
+
+  //Course
+  GetAllCourse() {
+    return this.http.get<any>(GlobalVariable.SERVICE_API_URL + "Course/GetAllCourse", this.httpOptions);
+}
+AddCourse(Course): Observable<any> {
+    return this.http.post<Course>(GlobalVariable.SERVICE_API_URL + "Course/AddCourse", Course, this.httpOptions);
+}
+SaveCourseImage(formdata, CourseId): Observable<any> {
+    const uploadReq = new HttpRequest('Post', GlobalVariable.SERVICE_API_URL + "Course/SaveCourseImage?CourseId=" + CourseId, formdata, null);
+    return this.http.request(uploadReq);
+}
+
 
 }
