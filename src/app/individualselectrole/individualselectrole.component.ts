@@ -1,23 +1,25 @@
 import { Component } from '@angular/core';
 import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
+import { MenteeProfile, MentorProfile } from '../Class';
+import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute, Router } from '@angular/router';
+import { WebService } from '../Service';
 @Component({
   selector: 'app-individualselectrole',
   templateUrl: './individualselectrole.component.html',
   styleUrls: ['./individualselectrole.component.scss']
 })
 export class IndividualselectroleComponent {
-<<<<<<< HEAD
-  constructor(public modalRef: MdbModalRef<IndividualselectroleComponent>) {}
-=======
-  mentorProfile: MentorProfile
-  menteeProfile: MenteeProfile
-  UId: any
-  mentorProfileList: any[]
-  menteeProfileList: any[]
-  manteeList: any[]
-  mainList: any[]
-  MentorId: any
-  MenteeId:any
+   mentorProfile:MentorProfile
+   menteeProfile:MenteeProfile
+   mentorProfileList:any[]
+   menteeProfileList:any[]
+   manteeList:any[]
+   mainList:any[]
+   MentorId:any
+   MenteeId:any
+   UId:any
+
   constructor(public modalRef: MdbModalRef<IndividualselectroleComponent>,private route: ActivatedRoute, private router: Router,
     private http: HttpClient,
     private service: WebService) {
@@ -69,7 +71,7 @@ export class IndividualselectroleComponent {
           this.mentorProfile.HighestEducation = ""
           this.mentorProfile.AreaOfExpertise = ""
           this.mentorProfile.LanguagesSpoken = ""
-          this.mentorProfile.Status = ""
+          this.mentorProfile.Status = "InActive"
   
           console.log("mentorProfile", this.mentorProfile);
           this.service.AddMentorProfile(this.mentorProfile).subscribe((result) => {
@@ -113,8 +115,9 @@ export class IndividualselectroleComponent {
           }
           // console.log("this.MenteeId", this.MenteeId);
           // localStorage.setItem('MenteeId', this.MenteeId);
-  
+          
           this.router.navigateByUrl("/individualmenteesdashboard");
+     
         }
         else {
   
@@ -123,7 +126,7 @@ export class IndividualselectroleComponent {
           this.menteeProfile.Industry = ""
           this.menteeProfile.YearsOfExperience = ""
           this.menteeProfile.TargetedDesignation = ""
-          this.menteeProfile.Status = ""
+          this.menteeProfile.Status = "InActive"
   
           console.log("menteeProfile", this.menteeProfile);
           this.service.AddMenteeProfile(this.menteeProfile).subscribe((result) => {
@@ -132,6 +135,7 @@ export class IndividualselectroleComponent {
               alert('Saved Successfully.');
               localStorage.setItem('MenteeId', result);
               this.router.navigateByUrl("/individualmenteesdashboard");
+                  
   
             }
             else {
@@ -147,5 +151,5 @@ export class IndividualselectroleComponent {
 
    
 
->>>>>>> dc7d0a9be500e808b1b5f4c380217635624b39af
+
 }

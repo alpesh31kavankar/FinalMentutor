@@ -1,3 +1,4 @@
+<app-header></app-header>
 <section>
   <div class="container-fluid">
       <div class="row" style="    justify-content: center;">
@@ -27,26 +28,26 @@
             
           <div class="row mt-4 pt-2">
             <div class="col">
-              <input type="text" class="form-control form-control-lg text-center py-4" maxlength="1" autofocus="">
+              <input type="text" class="form-control form-control-lg text-center py-4" [(ngModel)]="otp1"maxlength="1" #input1 (input)="moveToNext(input1, input2)">
             </div>
             <div class="col">
-              <input type="text" class="form-control form-control-lg text-center py-4" maxlength="1">
+              <input type="text" class="form-control form-control-lg text-center py-4" [(ngModel)]="otp2" maxlength="1"#input2 (input)="moveToNext(input2, input3)">
             </div>
             <div class="col">
-              <input type="text" class="form-control form-control-lg text-center py-4" maxlength="1">
+              <input type="text" class="form-control form-control-lg text-center py-4" [(ngModel)]="otp3" maxlength="1"#input3 (input)="moveToNext(input3, input4)">
             </div>
             <div class="col">
-              <input type="text" class="form-control form-control-lg text-center py-4" maxlength="1">
+              <input type="text" class="form-control form-control-lg text-center py-4"[(ngModel)]="otp4" maxlength="1"#input4 (input)="moveToNext(input4, input5)">
             </div>
             <div class="col">
-              <input type="text" class="form-control form-control-lg text-center py-4" maxlength="1">
+              <input type="text" class="form-control form-control-lg text-center py-4"  [(ngModel)]="otp5"maxlength="1"#input5 (input)="moveToNext(input5, input6)">
             </div>
             <div class="col">
-              <input type="text" class="form-control form-control-lg text-center py-4" maxlength="1">
+              <input type="text" class="form-control form-control-lg text-center py-4" [(ngModel)]="otp6" maxlength="1" #input6>
             </div>
           </div>
 
-          <a routerLink="/individualresetpassword" class="btn btn-purple btn-lg w-100 hover-lift-light mt-4">
+          <a  (click)="OnSubmit1()" class="btn btn-purple btn-lg w-100 hover-lift-light mt-4">
             Verify my account
           </a>
         </div>

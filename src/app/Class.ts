@@ -281,6 +281,7 @@ export class MentorSkill {
 export class MenteeSkill {
     MenteeSkillId: number;
     MenteeProfileId: number;
+    skill:Skill
     SkillId: number;
     Status: string;
     CreatedBy: string;
@@ -327,9 +328,9 @@ export class FeedBack {
 export class UserDetail {
     UserDetailId: number;
     RegistrationId: number;
-    CountryId: number;
-    StateId: number;
-    CityId: number;
+    CountryId: string;
+    StateId: string;
+    CityId: string;
     Address: string;
     Contact: string;
     Photo: string;
@@ -340,13 +341,13 @@ export class UserDetail {
     UpdatedDate: string;
 }
 
-export class MenteeProfile {  
+export class MenteeProfile {
     MenteeProfileId: number;
     RegistrationId: number;
-    JobTitle: number;
-    Industry: string; 
+    JobTitle: string;
+    Industry: string;
     YearsOfExperience: string;
-    TargetedDesignation: string; 
+    TargetedDesignation: string;
     Status: string;
     CreatedBy: string;
     CreatedDate: string;
@@ -354,17 +355,17 @@ export class MenteeProfile {
     UpdatedDate: string;
 }
 
-export class MentorProfile {  
+export class MentorProfile {
     MentorProfileId: number;
     RegistrationId: number;
-   // TransactionId: number;
-    Address: number;
-    JobTitle: number;
+    // TransactionId: number;
+    Address: string;
+    JobTitle: string;
     Company: string;
-    Industry: string; 
+    Industry: string;
     HighestEducation: string;
-   // Resume: string;
-    AreaOfExpertise: string; 
+    // Resume: string;
+    AreaOfExpertise: string;
     LanguagesSpoken: string;
     Status: string;
     CreatedBy: string;
@@ -393,4 +394,24 @@ export class Course {
     UpdatedDate: string;
 }
 
-	
+export class PurchaseCourse {
+    PurchaseCourseId: number;
+    MenteeProfileId: number;
+    CourseId: number;
+    PaymentStatus: string;
+    Status: string;
+    CreatedBy: string;
+    CreatedDate: string;
+    UpdatedBy: string;
+    UpdatedDate: string;
+}
+export class MenteeSession {
+    MenteeSessionId: number;
+    SessionId: number;
+    MenteeProfileId: number;
+    Status: string;
+    CreatedBy: string;
+    CreatedDate: string;
+    UpdatedBy: string;
+    UpdatedDate: string;
+}

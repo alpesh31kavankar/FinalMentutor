@@ -40,6 +40,7 @@ import { IndividualmentoraddcoursesComponent } from './IndividualMentorDashMenus
 import { IndividualaddsessionComponent } from './IndividualMentorDashMenus/individualaddsession/individualaddsession.component';
 import { IndividualmenteeplansComponent } from './IndividualMenteeDashMenus/individualmenteeplans/individualmenteeplans.component';
 import { IndividualmentorplansComponent } from './IndividualMentorDashMenus/individualmentorplans/individualmentorplans.component';
+import { IndividualmenteespurchasecourseComponent } from './IndividualMenteeDashMenus/individualmenteespurchasecourse/individualmenteespurchasecourse.component';
 
 const routes: Routes = [
   { path: '',   redirectTo: '/Landingpage', pathMatch: 'full' },
@@ -70,11 +71,13 @@ const routes: Routes = [
   // {path:'individualmenteementor',component:IndividualmenteementorComponent},
   
 
-  {path:'individualemailverifyotp',component:IndividualemailverifyotpComponent},
+  {path:'individualemailverifyotp/:Id',component:IndividualemailverifyotpComponent},
   {path:'individualforgotmail',component:IndividualforgotmailComponent},
 
-  {path:'individualforgototp',component:IndividualforgototpComponent},
-  {path:'individualresetpassword',component:IndividualresetpasswordComponent},
+  {path:'individualforgototp/:Id',component:IndividualforgototpComponent},
+  {path:'individualresetpassword/:Id',component:IndividualresetpasswordComponent},
+
+
 
 
   
@@ -99,6 +102,8 @@ const routes: Routes = [
   {path:'individualaddsession',component:IndividualaddsessionComponent},
   {path:'individualmenteeplans',component:IndividualmenteeplansComponent},
   {path:'individualmentorplans',component:IndividualmentorplansComponent},
+
+  {path:'individualmenteespurchasecourse/:CourseId',component:IndividualmenteespurchasecourseComponent},
 
   
 

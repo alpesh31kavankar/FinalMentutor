@@ -71,13 +71,13 @@
         <li class="nav-item me-3 me-lg-1">
           <a class="nav-link d-sm-flex align-items-sm-center" href="#">
             <img
-              src="https://mdbootstrap.com/img/new/avatars/1.webp"
+              src="{{imgPath}}Content/UserDetail/{{this.userDetail.Photo}}"
               class="rounded-circle"
               height="22"
               alt=""
               loading="lazy"
             />
-            <strong class="d-none d-sm-block ms-1">John</strong>
+            <strong class="d-none d-sm-block ms-1">{{this.registration.FName}}</strong>
           </a>
         </li>
      
@@ -163,7 +163,7 @@
               <a class="dropdown-item" routerLink="/companyLogin" >Company</a>
             </li>
             <li>
-              <a class="dropdown-item" href="#">Logout</a>
+              <a class="dropdown-item" (click)="logout();">Logout</a>
             </li>
           </ul>
         </li>
@@ -210,9 +210,9 @@
   <div class="row navpadding" >
     <nav class="navbar navbar-expand-lg navbar-light bg-light secnavborder">
         <div class="container-fluid">
-            <a class="navbar-brand counterspann" href="#!" (click)="openCompanyAdminDashModalSidenav()"><i class="fas fa-bars "></i></a>
-            <a class="navbar-brand counterspann" href="#!" (click)="openMenteeDashModalSidenav()"><i class="fas fa-bars "></i></a>
-            <a class="navbar-brand counterspann" href="#!" (click)="openMentorDashModalSidenav()"><i class="fas fa-bars "></i></a>
+            <a *ngIf="this.companyId > 0" class="navbar-brand counterspann" href="#!" (click)="openCompanyAdminDashModalSidenav()"><i class="fas fa-bars "></i></a>
+            <a *ngIf="this.MId > 0"class="navbar-brand counterspann" href="#!" (click)="openMenteeDashModalSidenav()"><i class="fas fa-bars "></i></a>
+            <a *ngIf="this.SId > 0"class="navbar-brand counterspann" href="#!" (click)="openMentorDashModalSidenav()"><i class="fas fa-bars "></i></a>
           <button
             class="navbar-toggler"
             type="button"
@@ -287,3 +287,4 @@
       </nav>
   </div>
   </div>
+

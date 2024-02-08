@@ -1,21 +1,18 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { IndividualselectroleComponent } from '../../individualselectrole/individualselectrole.component';
 import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
-<<<<<<< HEAD
-=======
 import { HttpClient } from '@angular/common/http';
 import { UserDetail } from 'src/app/Class';
 import { ActivatedRoute, Router } from '@angular/router';
 import { WebService } from 'src/app/Service';
 import { FormControl } from '@angular/forms';
->>>>>>> dc7d0a9be500e808b1b5f4c380217635624b39af
 
 @Component({
   selector: 'app-individualuserdetails',
   templateUrl: './individualuserdetails.component.html',
   styleUrls: ['./individualuserdetails.component.scss']
 })
-export class IndividualuserdetailsComponent {
+export class IndividualuserdetailsComponent implements OnInit{
 
   //  @ViewChild('input') input: ElementRef<HTMLInputElement>;
   // myControl = new FormControl();
@@ -25,10 +22,6 @@ export class IndividualuserdetailsComponent {
 
   modalRef: MdbModalRef<IndividualselectroleComponent> | null = null;
 
-<<<<<<< HEAD
-  
-  constructor(private modalService: MdbModalService) {}
-=======
   UId:any
   userDetail: UserDetail
 
@@ -38,7 +31,7 @@ export class IndividualuserdetailsComponent {
 
   userDetailsList:any[]
   userDetailmainList:any[]
-   countries:any[]
+
   
   constructor(private modalService: MdbModalService,private route: ActivatedRoute,private router: Router,
     private http: HttpClient,
@@ -47,8 +40,8 @@ export class IndividualuserdetailsComponent {
       //  this.filteredOptions = this.options.slice();
 
       this.userDetail = new UserDetail();
-    this.countries=[]
-    this.getcountryData();
+    
+    
     this.userDetailsList=[]
     this.userDetailmainList=[]
         this.route.params.subscribe((params) => {
@@ -67,7 +60,7 @@ export class IndividualuserdetailsComponent {
                 console.log("userDetailmainList",this.userDetailmainList);
                 if(this.userDetailmainList.length==1){
                   // this.router.navigateByUrl("/SelectRole"); 
-                  this.openModal()
+                   this.openModal()
                 }
                 else{
           
@@ -76,16 +69,7 @@ export class IndividualuserdetailsComponent {
               })
   }
 
-  getcountryData(){
-  
-    this.http.get('assets/json/country.json').subscribe((data) => {
-      
-    this.countries.push(data);
-    console.log("Allcountrylist is ",this.countries)
-    
-    });
-   
-      }
+
 
 
       // trackOption(index: number, option: string): string {
@@ -98,9 +82,8 @@ export class IndividualuserdetailsComponent {
 
   OnSubmit() {
     this.userDetail.RegistrationId=this.UId
-    this.userDetail.CountryId=1
-    this.userDetail.StateId=1
-    this.userDetail.CityId=1
+    // this.userDetail.CountryId=1
+  
     this.userDetail.Status="Active"
 
     console.log("userDetail",this.userDetail);
@@ -112,7 +95,7 @@ export class IndividualuserdetailsComponent {
       this.service.SaveUserDetailImage(formData,result).subscribe(data => {
        
         alert('Saved Successfully.');
-        this.openModal()
+       // this.openModal()
       });  
      }
      else {
@@ -132,9 +115,120 @@ export class IndividualuserdetailsComponent {
         this.userDetail.Photo = this.filesToUpload[i].name;
     } 
     }
->>>>>>> dc7d0a9be500e808b1b5f4c380217635624b39af
 
   openModal() {
     this.modalRef = this.modalService.open(IndividualselectroleComponent)
   }
+
+
+  @ViewChild('countryInput') countryInput: ElementRef<HTMLInputElement>;
+  @ViewChild('stateInput') stateInput: ElementRef<HTMLInputElement>;
+  @ViewChild('cityInput') cityInput: ElementRef<HTMLInputElement>;
+  
+  countryControl = new FormControl('');
+  stateControl = new FormControl('');
+  cityControl = new FormControl('');
+  
+  countryOptions: any[] = [];
+  stateOptions: any[] = [];
+  cityOptions: any[] = [];
+  
+  filteredCountryOptions: any[];
+  filteredStateOptions: any[];
+  filteredCityOptions: any[];
+  
+  
+  
+  updatePlaceholder(inputElement: ElementRef<HTMLInputElement>, filteredOptions: any[]): void {
+    const autocompleteTextBox = inputElement.nativeElement;
+  
+    if (filteredOptions.length === 0) {
+      autocompleteTextBox.placeholder = 'Empty';
+    } else {
+      autocompleteTextBox.placeholder = 'Start typing...';
+    }
+  }
+  
+  getCountry() {
+    this.countryOptions = [];
+    this.http.get('/assets/json/country.json').subscribe((data: any) => {
+      this.countryOptions.push(data);
+      // this.options = this.countryOptions; // Update the options array with country names
+      console.log('countryOptions is ', this.countryOptions);
+      // console.log('options is ', this.options);
+    });
+  }
+  
+  getState(cntryid) {
+    debugger;
+    // Similarly, fetch state data and update stateOptions array
+    this.stateOptions = [];
+    this.cityOptions = [];
+    this.http.get('/assets/json/state.json').subscribe((data: any) => {
+      this.stateOptions.push(data);
+      debugger;
+      console.log('stateOptions is ', this.stateOptions);
+      this.stateOptions =this.stateOptions[0].filter(s => s.country_id === cntryid);
+      console.log('Filtered ststeoption is is ', this.stateOptions);
+    });
+  }
+  
+  getCity(steid) {
+    this.cityOptions = [];
+    // Similarly, fetch state data and update stateOptions array
+    this.http.get('/assets/json/city.json').subscribe((data: any) => {
+      this.cityOptions.push(data);
+      console.log('cityOptions is ', this.cityOptions);
+      this.cityOptions =this.cityOptions[0].filter(s => s.state_id === steid);
+      console.log('Filtered ststeoption is is ', this.stateOptions);
+    });
+  }
+  
+  // Extra
+  
+  
+  filterCountry(ss): void {
+    this.stateOptions = [];
+  
+    const filterValue = this.countryInput.nativeElement.value.toLowerCase();
+    this.filteredCountryOptions = this.countryOptions[0].filter(o => o.name.toLowerCase().startsWith(filterValue));
+  
+    this.updatePlaceholder(this.countryInput, this.filteredCountryOptions);
+    debugger;
+    // Update stateOptions based on the selected country
+    const selectedCountry = this.countryOptions[0].find(c => c.id === ss);
+    debugger;
+    // this.stateOptions = selectedCountry ? this.stateOptions[0].filter(s => s.country_id === selectedCountry.id) : [];
+    console.log("selected country",);
+    this.getState(selectedCountry.id);
+  }
+  
+  filterState(cc): void {
+    const filterValue = this.stateInput.nativeElement.value.toLowerCase();
+    this.filteredStateOptions = this.stateOptions.filter(o => o.name.toLowerCase().startsWith(filterValue));
+  
+    this.updatePlaceholder(this.stateInput, this.filteredStateOptions);
+  
+    // Update cityOptions based on the selected state
+    const selectedState = this.stateOptions.find(s => s.id === cc);
+   
+    // this.cityOptions = selectedState ? this.cityOptions[0].filter(c => c.state_id === selectedState.id) : [];
+    this.getCity(selectedState.id);
+  }
+  
+  filterCity(): void {
+    const filterValue = this.cityInput.nativeElement.value.toLowerCase();
+    this.filteredCityOptions = this.cityOptions.filter(o => o.name.toLowerCase().startsWith(filterValue));
+  
+    this.updatePlaceholder(this.cityInput, this.filteredCityOptions);
+  }
+
+
+  ngOnInit(): void {
+
+    this.getCountry();
+
+      }
+
+
 }

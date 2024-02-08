@@ -217,3 +217,29 @@ text-align: center !important;
 }
 
 
+.clientlogo{
+  width: 50% !important;
+  height: 55px !important;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+@media screen and (max-width: 480px) {
+.clientlogo{
+  width: 85% !important;
+  height: 40px !important;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+}
+
+
+.clientlogooo{
+  width: 100% !important;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.headingtxt {
+  text-align: center;
+  color: #007bb9;
+  // font-size: 100% !important;
+  margin: 0px;
+}

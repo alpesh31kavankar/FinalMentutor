@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
 import { Course, MentorSkill, Skill } from 'src/app/Class';
+import { GlobalVariable } from 'src/app/Global';
 import { WebService } from 'src/app/Service';
 
 @Component({
@@ -15,10 +16,15 @@ export class IndividualmentoraddcoursesComponent implements OnInit  {
   mentorSkill:MentorSkill
   mentorSkillList:any[]
   courseList:any[]
-
+mainCourseList:any[]
   uploadResult: any;
   filesToUpload: Array<File>;
   selectedFileNames: string[] = [];
+
+  SId:any
+ 
+mainMentorSkillList:any[]
+imgPath: string = GlobalVariable.BASE_API_URL;
 
   constructor(public modalRef: MdbModalRef<IndividualmentoraddcoursesComponent>,private route: ActivatedRoute, private router: Router,
     private http: HttpClient,
@@ -26,14 +32,24 @@ export class IndividualmentoraddcoursesComponent implements OnInit  {
       this.course = new Course();
       this.course.mentorSkill = new MentorSkill();
       this.mentorSkillList=[]
+      this.mainCourseList=[]
       this.courseList=[]
+      this.mainMentorSkillList=[]
+      this.route.params.subscribe((params) => {
+        debugger
+      
+        this.SId = JSON.parse(localStorage.getItem('MentorId'));
+       
+        console.log("SId", this.SId)
+      });
 
   }
 
   OnSubmit() {
-    this.course.MentorProfileId=1
-    this.course.StartDate="2-2"
-    this.course.EndDate="-4-4"
+    this.courseList=[]
+    this.mainCourseList=[]
+    this.course.MentorProfileId= this.SId
+  
     this.course.Status="Active"
     console.log("course", this.course);
     this.service.AddCourse(this.course).subscribe((result) => {
@@ -44,6 +60,7 @@ export class IndividualmentoraddcoursesComponent implements OnInit  {
         this.service.SaveCourseImage(formData,result).subscribe(data => {
          
           alert('Saved Successfully.');
+          this.GetAllCourse()
         }); 
       }
       else {
@@ -70,17 +87,24 @@ export class IndividualmentoraddcoursesComponent implements OnInit  {
         this.mentorSkillList.push(data);
       }
       console.log("mentorSkillList", this.mentorSkillList);
+
+      this.mainMentorSkillList=this.mentorSkillList.filter(x => x.MentorProfileId== this.SId) 
+
     });
   }
 
   GetAllCourse(){
-    this.courseList=[]
+   
     this.service.GetAllCourse().subscribe((result) => {
+      this.courseList=[]
+      this.mainCourseList=[]
       // console.log(result);
       for(let data of result){
           this.courseList.push(data);   
       }     
            console.log("courseList",this.courseList);
+           this.mainCourseList=this.courseList.filter(x => x.MentorProfileId== this.SId) 
+
     });
   }
 ngOnInit(): void {

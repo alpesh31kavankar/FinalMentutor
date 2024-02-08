@@ -4,6 +4,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
+import {
+  GoogleLoginProvider,
+  FacebookLoginProvider
+} from '@abacritt/angularx-social-login';
 
 
 // MDB Modules
@@ -40,7 +45,7 @@ import { MentordetailsComponent } from './CompanyAdminDashMenus/mentordetails/me
 import { UserdetailsComponent } from './Registration/userdetails/userdetails.component';
 
 // material
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
+// import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import {MatInputModule} from '@angular/material/input';
 import {MatRadioModule} from '@angular/material/radio';
@@ -57,7 +62,7 @@ import { IndividualmenteecoursesComponent } from './IndividualMenteeDashMenus/in
 import { IndividualmenteesessionsComponent } from './IndividualMenteeDashMenus/individualmenteesessions/individualmenteesessions.component';
 import { IndividualmenteebusinessassociateComponent } from './IndividualMenteeDashMenus/individualmenteebusinessassociate/individualmenteebusinessassociate.component';
 
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { IndividualforgototpComponent } from './Registration/individualforgototp/individualforgototp.component';
@@ -75,11 +80,8 @@ import { IndividualmentormenteesComponent } from './IndividualMentorDashMenus/in
 import { IndividualmentorcontentComponent } from './IndividualMentorDashMenus/individualmentorcontent/individualmentorcontent.component';
 import { IndividualsearchmentorComponent } from './IndividualMenteeDashMenus/individualsearchmentor/individualsearchmentor.component';
 import { IndividualmentoraddcoursesComponent } from './IndividualMentorDashMenus/individualmentoraddcourses/individualmentoraddcourses.component';
-<<<<<<< HEAD
 import { IndividualaddsessionComponent } from './IndividualMentorDashMenus/individualaddsession/individualaddsession.component';
-=======
-import { AsyncPipe } from '@angular/common';
->>>>>>> dc7d0a9be500e808b1b5f4c380217635624b39af
+// import { AsyncPipe } from '@angular/common';
 
 import {MatNativeDateModule} from '@angular/material/core';
 import { IndividualmentorplansComponent } from './IndividualMentorDashMenus/individualmentorplans/individualmentorplans.component';
@@ -87,10 +89,16 @@ import { IndividualmenteeplansComponent } from './IndividualMenteeDashMenus/indi
 
 // 
 import {Component, ElementRef, ViewChild} from '@angular/core';
-import {FormControl, ReactiveFormsModule} from '@angular/forms';
-import {NgFor, AsyncPipe} from '@angular/common';
+import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {NgFor, AsyncPipe, DatePipe, CommonModule} from '@angular/common';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
+
+
+
+import { IndividualmenteespurchasecourseComponent } from './IndividualMenteeDashMenus/individualmenteespurchasecourse/individualmenteespurchasecourse.component';
+
+import {MatChipsModule} from '@angular/material/chips';
 
 @NgModule({
   declarations: [
@@ -135,12 +143,13 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     IndividualmentoraddcoursesComponent,
     IndividualaddsessionComponent,
     IndividualmentorplansComponent,
-    IndividualmenteeplansComponent
+    IndividualmenteeplansComponent,
+    IndividualmenteespurchasecourseComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
+     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
     MdbAccordionModule,
@@ -160,7 +169,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     MdbTooltipModule,
     MdbValidationModule,
     // InputsModule.forRoot()
-    
+    MatChipsModule,
 // material
 
 MatFormFieldModule,
@@ -168,27 +177,43 @@ MatInputModule,
 MatSelectModule,
 MatRadioModule,
 MatDatepickerModule,
-
-<<<<<<< HEAD
+SocialLoginModule,
 MatNativeDateModule,
 
-FormsModule,
+// FormsModule,
     MatFormFieldModule,
     MatInputModule,
     MatAutocompleteModule,
     ReactiveFormsModule,
     NgFor,
     AsyncPipe,
-=======
-MatAutocompleteModule,
-
-AsyncPipe,
-ReactiveFormsModule
->>>>>>> dc7d0a9be500e808b1b5f4c380217635624b39af
+    CommonModule
 
   ],
   providers: [
-
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+             // '496925693986-i3markpgj2kk2f6n3rb6k6eviimv6g55.apps.googleusercontent.com'
+              // 496925693986-i3markpgj2kk2f6n3rb6k6eviimv6g55.apps.googleusercontent.com
+              '256869107176-efrnlcvp8v5q273kq8e3o9is8f59oje0.apps.googleusercontent.com'
+            )
+          },
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('clientId')
+          }
+        ],
+        onError: (err) => {
+          console.error(err);
+        }
+      } as SocialAuthServiceConfig,
+    },DatePipe
   ],
   bootstrap: [AppComponent]
 })

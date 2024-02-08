@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { HttpHeaders } from '@angular/common/http';
 
 import { GlobalVariable } from './Global';
-import { Course, FeedBack, Login, MenteeProfile, MenteeSkill, MentorPlan, MentorProfile, MentorSkill, Registration, Session, UserDetail } from './Class';
+import { Course, FeedBack, IndividualPlan, Login, MenteePlan, MenteeProfile, MenteeSession, MenteeSkill, MentorPlan, MentorProfile, MentorSkill, PurchaseCourse, Registration, Session, UserDetail } from './Class';
 
 @Injectable({
     providedIn: 'root'
@@ -44,19 +44,19 @@ export class WebService {
     GetAllSession() {
         return this.http.get<any>(GlobalVariable.SERVICE_API_URL + "Session/GetAllSession", this.httpOptions);
     }
-    DeleteSession(Id): Observable<any> {
-        return this.http.delete<any>(GlobalVariable.SERVICE_API_URL + "Session/DeleteSession?Id=" + Id, this.httpOptions);
+    DeleteSession(SessionId): Observable<any> {
+        return this.http.delete<any>(GlobalVariable.SERVICE_API_URL + "Session/DeleteSession?SessionId=" + SessionId, this.httpOptions);
     }
-    GetSessionById(Id): Observable<any> {
-        return this.http.get<any>(GlobalVariable.SERVICE_API_URL + "Session/GetSessionById?Id=" + Id, this.httpOptions);
+    GetSessionById(SessionId): Observable<any> {
+        return this.http.get<any>(GlobalVariable.SERVICE_API_URL + "Session/GetSessionById?SessionId=" + SessionId, this.httpOptions);
     }
     UpdateSession(Session): Observable<any> {
         return this.http.post<Session>(GlobalVariable.SERVICE_API_URL + "Session/UpdateSession", Session, this.httpOptions);
     }
-    // SaveSkillImage(formdata,Id): Observable<any> {
-    //   const uploadReq = new HttpRequest('Post',GlobalVariable.SERVICE_API_URL +"SubCategory/SaveSkillImage?Id="+Id, formdata, null );
-    //   return this.http.request(uploadReq);
-    // }
+    SaveSessionImage(formdata, SessionId): Observable<any> {
+        const uploadReq = new HttpRequest('Post', GlobalVariable.SERVICE_API_URL + "Session/SaveSessionImage?SessionId=" + SessionId, formdata, null);
+        return this.http.request(uploadReq);
+    }
 
     //Registration
     AddRegistration(Registration): Observable<any> {
@@ -138,6 +138,14 @@ export class WebService {
 //     return this.http.post<MentorSkill>(GlobalVariable.SERVICE_API_URL + "MentorSkill/UpdateMentorSkill", MentorSkill, this.httpOptions);
 // }
 
+
+
+ // MenteePlan
+ AddMenteePlan(MenteePlan): Observable<any> {
+    return this.http.post<MenteePlan>(GlobalVariable.SERVICE_API_URL + "MenteePlan/AddMenteePlan", MenteePlan, this.httpOptions);
+}
+
+
 //AddFeedBack
 AddFeedBack(FeedBack): Observable<any> {
     return this.http.post<FeedBack>(GlobalVariable.SERVICE_API_URL + "FeedBack/AddFeedBack", FeedBack, this.httpOptions);
@@ -182,22 +190,34 @@ AddUserDetail(UserDetail): Observable<any> {
 AddMenteeProfile(MenteeProfile): Observable<any> {
     return this.http.post<MenteeProfile>(GlobalVariable.SERVICE_API_URL + "MenteeProfile/AddMenteeProfile", MenteeProfile, this.httpOptions);
 }
-// GetAllUserDetail() {
-//     return this.http.get<any>(GlobalVariable.SERVICE_API_URL + "UserDetail/GetAllUserDetail", this.httpOptions);
-// }
+GetAllMenteeProfile() {
+    return this.http.get<any>(GlobalVariable.SERVICE_API_URL + "MenteeProfile/GetAllMenteeProfile", this.httpOptions);
+}
 // DeleteUserDetail(UserDetailId): Observable<any> {
 //     return this.http.delete<any>(GlobalVariable.SERVICE_API_URL + "UserDetail/DeleteUserDetail?UserDetailId=" + UserDetailId, this.httpOptions);
 // }
-// GetUserDetailById(UserDetailId): Observable<any> {
-//     return this.http.get<any>(GlobalVariable.SERVICE_API_URL + "UserDetail/GetUserDetailById?UserDetailId=" + UserDetailId, this.httpOptions);
-// }
-// UpdateUserDetail(UserDetail): Observable<any> {
-//     return this.http.post<UserDetail>(GlobalVariable.SERVICE_API_URL + "UserDetail/UpdateUserDetail", UserDetail, this.httpOptions);
-// }
+GetMenteeProfileById(MenteeProfileId): Observable<any> {
+    return this.http.get<any>(GlobalVariable.SERVICE_API_URL + "MenteeProfile/GetMenteeProfileById?MenteeProfileId=" + MenteeProfileId, this.httpOptions);
+}
+UpdateMenteeProfile(MenteeProfile): Observable<any> {
+    return this.http.post<MenteeProfile>(GlobalVariable.SERVICE_API_URL + "MenteeProfile/UpdateMenteeProfile", MenteeProfile, this.httpOptions);
+}
 
-//MenteeProfile
-AddMentorProfile(MentorProfile): Observable<any> {
+  //MentorProfile
+  AddMentorProfile(MentorProfile): Observable<any> {
     return this.http.post<MentorProfile>(GlobalVariable.SERVICE_API_URL + "MentorProfile/AddMentorProfile", MentorProfile, this.httpOptions);
+}
+GetAllMentorProfile() {
+    return this.http.get<any>(GlobalVariable.SERVICE_API_URL + "MentorProfile/GetAllMentorProfile", this.httpOptions);
+}
+// DeleteUserDetail(UserDetailId): Observable<any> {
+//     return this.http.delete<any>(GlobalVariable.SERVICE_API_URL + "UserDetail/DeleteUserDetail?UserDetailId=" + UserDetailId, this.httpOptions);
+// }
+GetMentorProfileById(MentorProfileId): Observable<any> {
+    return this.http.get<any>(GlobalVariable.SERVICE_API_URL + "MentorProfile/GetMentorProfileById?MentorProfileId=" + MentorProfileId, this.httpOptions);
+}
+UpdateMentorProfile(MentorProfile): Observable<any> {
+    return this.http.post<MentorProfile>(GlobalVariable.SERVICE_API_URL + "MentorProfile/UpdateMentorProfile", MentorProfile, this.httpOptions);
 }
 
 
@@ -211,6 +231,9 @@ GetAllSkill() {
   GetAllCourse() {
     return this.http.get<any>(GlobalVariable.SERVICE_API_URL + "Course/GetAllCourse", this.httpOptions);
 }
+GetCourseById(CourseId): Observable<any> {
+    return this.http.get<any>( GlobalVariable.SERVICE_API_URL +"Course/GetCourseById?CourseId="+CourseId, this.httpOptions);
+  }
 AddCourse(Course): Observable<any> {
     return this.http.post<Course>(GlobalVariable.SERVICE_API_URL + "Course/AddCourse", Course, this.httpOptions);
 }
@@ -218,6 +241,51 @@ SaveCourseImage(formdata, CourseId): Observable<any> {
     const uploadReq = new HttpRequest('Post', GlobalVariable.SERVICE_API_URL + "Course/SaveCourseImage?CourseId=" + CourseId, formdata, null);
     return this.http.request(uploadReq);
 }
+
+
+   //IndividualPlan
+   AddIndividualPlan(IndividualPlan): Observable<any> {
+    return this.http.post<IndividualPlan>( GlobalVariable.SERVICE_API_URL +"IndividualPlan/AddIndividualPlan",IndividualPlan, this.httpOptions);
+  } 
+  GetAllIndividualPlan() {
+    return this.http.get<any>( GlobalVariable.SERVICE_API_URL +"IndividualPlan/GetAllIndividualPlan", this.httpOptions);
+  }
+  DeleteIndividualPlan(IndividualPlanId): Observable<any> {
+    return this.http.delete<any>( GlobalVariable.SERVICE_API_URL +"IndividualPlan/DeleteIndividualPlan?IndividualPlanId="+IndividualPlanId,this.httpOptions);
+  }
+  GetIndividualPlanById(IndividualPlanId): Observable<any> {
+    return this.http.get<any>( GlobalVariable.SERVICE_API_URL +"IndividualPlan/GetIndividualPlanById?IndividualPlanId="+IndividualPlanId, this.httpOptions);
+  }
+  UpdateIndividualPlan(IndividualPlan): Observable<any> {
+    return this.http.post<IndividualPlan>( GlobalVariable.SERVICE_API_URL +"IndividualPlan/UpdateIndividualPlan",IndividualPlan, this.httpOptions);
+  } 
+
+
+//AddPurchaseCourse
+AddPurchaseCourse(PurchaseCourse): Observable<any> {
+    return this.http.post<PurchaseCourse>( GlobalVariable.SERVICE_API_URL +"PurchaseCourse/AddPurchaseCourse",PurchaseCourse, this.httpOptions);
+  } 
+  GetAllPurchaseCourse() {
+    return this.http.get<any>( GlobalVariable.SERVICE_API_URL +"PurchaseCourse/GetAllPurchaseCourse", this.httpOptions);
+  }
+
+
+//AddMenteeSession
+AddMenteeSession(MenteeSession): Observable<any> {
+    debugger
+    return this.http.post<MenteeSession>( GlobalVariable.SERVICE_API_URL +"MenteeSession/AddMenteeSession",MenteeSession, this.httpOptions);
+  } 
+
+  GetAllMenteeSession(){
+    return this.http.get<any>( GlobalVariable.SERVICE_API_URL +"MenteeSession/GetAllMenteeSession", this.httpOptions);
+  }
+  GetMenteeSessionById(MenteeSessionId): Observable<any> {
+    return this.http.get<any>( GlobalVariable.SERVICE_API_URL +"MenteeSession/GetMenteeSessionById?MenteeSessionId="+MenteeSessionId, this.httpOptions);
+  }
+  UpdateMenteeSession(MenteeSession): Observable<any> {
+    return this.http.post<MenteeSession>( GlobalVariable.SERVICE_API_URL +"MenteeSession/UpdateMenteeSession",MenteeSession, this.httpOptions);
+  } 
+
 
 
 }

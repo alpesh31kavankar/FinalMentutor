@@ -127,7 +127,7 @@ export class IndividualsignupComponent {
 
               } else {
                 alert('updated successfully');
-                this.router.navigateByUrl("/VerifyEmail/" + this.Id);
+                this.router.navigateByUrl("/individualemailverifyotp/" + this.Id);
 
                 //  this.router.navigate(['otp']);
               }

@@ -1,5 +1,5 @@
 
-
+<app-header></app-header>
 <section>
     <div class="container-fluid">
         <div class="row">
@@ -10,61 +10,16 @@
                 
                 <div class="row">
              
-                  <div class="col-lg-4 col-4 bottomborder topborder boxshadoww clientpadd txtt" style="    font-size: 66%;">
-                     <img class="clientlogo" style="    border-radius: 0px 0px 10px 10px;" src="\assets\Images\Course\crs\2.jpg"  alt="...">
+                  <div class="col-lg-4 col-4 bottomborder topborder boxshadoww clientpadd txtt" *ngFor="let i of mainpurchaseCourseList" style="    font-size: 66%;">
+                     <img class="clientlogo" style="    border-radius: 0px 0px 10px 10px;" src="{{imgPath}}Content/Course/{{i.course.Photo}}"  alt="...">
                    <div class="row">
-                    <div class="col-lg-6 col-6 brder">₹2000</div>
-                    <div class="col-lg-6 col-6 brder">Java</div>
-                    <div class="col-lg-12 brder txtcntr">Fullstack Angular</div>
-                    <div class="col-lg-12  txtcntr"><a href="#!">View</a></div>
+                    <div class="col-lg-6 col-6 brder">₹{{i.course.Price}}</div>
+                    <div class="col-lg-6 col-6 brder">{{i.course.Title}}</div>
+                    <div class="col-lg-12 brder txtcntr">{{i.course.SubTitle}}</div>
+                    <div class="col-lg-12  txtcntr"><a (click)="purchaseCourse(i.course.CourseId)">View</a></div>
                    </div>
                   </div>
-                  <div class="col-lg-4 col-4 bottomborder topborder boxshadoww clientpadd txtt" style="    font-size: 66%;">
-                    <img class="clientlogo" style="    border-radius: 0px 0px 10px 10px;" src="\assets\Images\Course\crs\3.jpg"  alt="...">
-                  <div class="row">
-                   <div class="col-lg-6 col-6 brder">₹2000</div>
-                   <div class="col-lg-6 col-6 brder">Java</div>
-                   <div class="col-lg-12 brder txtcntr">Fullstack Angular</div>
-                   <div class="col-lg-12  txtcntr"><a href="#!">View</a></div>
-                  </div>
-                 </div>
-                  
-                 <div class="col-lg-4 col-4 bottomborder topborder boxshadoww clientpadd txtt" style="    font-size: 66%;">
-                  <img class="clientlogo" style="    border-radius: 0px 0px 10px 10px;" src="\assets\Images\Course\crs\4.jpg"  alt="...">
-                <div class="row">
-                 <div class="col-lg-6 col-6 brder">₹2000</div>
-                 <div class="col-lg-6 col-6 brder">Java</div>
-                 <div class="col-lg-12 brder txtcntr">Fullstack Angular</div>
-                 <div class="col-lg-12  txtcntr"><a href="#!">View</a></div>
-                </div>
-               </div>
-               <div class="col-lg-4 col-4 bottomborder topborder boxshadoww clientpadd txtt" style="    font-size: 66%;">
-                 <img class="clientlogo" style="    border-radius: 0px 0px 10px 10px;" src="\assets\Images\Course\crs\5.jpg"  alt="...">
-               <div class="row">
-                <div class="col-lg-6 col-6 brder">₹2000</div>
-                <div class="col-lg-6 col-6 brder">Java</div>
-                <div class="col-lg-12 brder txtcntr">Fullstack Angular</div>
-                <div class="col-lg-12  txtcntr"><a href="#!">View</a></div>
-               </div>
-              </div>
-              <div class="col-lg-4 col-4 bottomborder topborder boxshadoww clientpadd txtt" style="    font-size: 66%;">
-                <img class="clientlogo" style="    border-radius: 0px 0px 10px 10px;" src="\assets\Images\Course\crs\6.jpg"  alt="...">
-              <div class="row">
-               <div class="col-lg-6 col-6 brder">₹2000</div>
-               <div class="col-lg-6 col-6 brder">Java</div>
-               <div class="col-lg-12 brder txtcntr">Fullstack Angular</div>
-               <div class="col-lg-12  txtcntr"><a href="#!">View</a></div>
-              </div>
-             </div>
-             <div class="col-lg-4 col-4 bottomborder topborder boxshadoww clientpadd txtt" style="    font-size: 66%;">
-                <img class="clientlogo" style="    border-radius: 0px 0px 10px 10px;" src="\assets\Images\Course\crs\2.jpg"  alt="...">
-              <div class="row">
-               <div class="col-lg-6 col-6 brder">₹2000</div>
-               <div class="col-lg-6 col-6 brder">Java</div>
-               <div class="col-lg-12 brder txtcntr">Fullstack Angular</div>
-               <div class="col-lg-12  txtcntr"><a href="#!">View</a></div>
-              </div>
-             </div>
+
                   </div>
                 
             </div>

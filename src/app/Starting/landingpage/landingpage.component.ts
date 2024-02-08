@@ -20,7 +20,7 @@ export class LandingpageComponent {
   modalRef: MdbModalRef<SelectrolemodalComponent> | null = null;
   modalRefWalk: MdbModalRef<WalkthroughscreenComponent> | null = null;
   constructor(private modalService: MdbModalService) {
-    this.filteredOptions = this.options.slice();
+    // this.filteredOptions = this.options.slice();
   }
 
   openModal() {
@@ -51,32 +51,5 @@ export class LandingpageComponent {
     
       }
 
-      @ViewChild('input') input: ElementRef<HTMLInputElement>;
-      myControl = new FormControl('');
-      options: string[] = ['One', 'Two', 'Three', 'Four', 'Five'];
-      filteredOptions: string[];
-    
-      
-    
-      filter(): void {
-        const filterValue = this.input.nativeElement.value.toLowerCase();
-        this.filteredOptions = this.options.filter(o => o.toLowerCase().includes(filterValue));
-       
-        const autocompleteTextBox = this.input.nativeElement;
-
-        if (this.filteredOptions.length === 0) {
-            // Set the value of the autocomplete text box to an empty string
-            autocompleteTextBox.value = '';
-            // Display "Empty" placeholder or any desired text
-            autocompleteTextBox.placeholder = 'Empty';
-        } else {
-            // Set the value of the autocomplete text box to the first option in filteredOptions
-            // autocompleteTextBox.value = this.filteredOptions[0];
-            // Clear the placeholder or set it to default
-            autocompleteTextBox.placeholder = 'Start typing...';
-        }
-// else {
-//   alert('Size of filtered options: ' + this.filteredOptions.length);
-// }
-      }
+ 
 }

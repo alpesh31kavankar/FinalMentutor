@@ -23,40 +23,42 @@
   
    
        <img class="boxshadoww roleoptions"
-      src="\assets\Images\users\user1.jpg"
-      height=""
+      src="{{imgPath}}Content/UserDetail/{{this.userDetail.Photo}}"
+      height="100px"
+      width="100px"
       alt=""
       loading="lazy"
       style="margin-top: 2px;"
     /> <br>
   
-  <p class="h5 headingtxt">Omkar R. Kadam</p>
-  <p class="h6 headingtxt">mentee Title here</p>
+  <p class="h5 headingtxt">{{ this.registration.FName}}{{ this.registration.LName}}</p>
+  <p class="h6 headingtxt">mentee</p>
+  <!-- {{this.menteeProfile.JobTitle}} -->
       <button type="button" routerLink="/individualmenteeprofile" style="    padding-top: 1%;
-      padding-bottom: 1%;" class="btn btn-primary btn-rounded" mdbRipple>View Profile</button>
+      padding-bottom: 1%;" class="btn btn-primary btn-rounded"(click)="modalRef.close()" mdbRipple>View Profile</button>
       </div>
      
       <hr />
   
-      <a routerLink="/individualmenteesdashboard"  class="tooltip-test" mdbTooltip="Login as Mentee">   <p class="boxshadoww roleoptions">Dashboard</p></a>
+      <a routerLink="/individualmenteesdashboard"   (click)="modalRef.close()"class="tooltip-test" mdbTooltip="Login as Mentee">   <p class="boxshadoww roleoptions">Dashboard</p></a>
     
       <hr />
   
-      <a routerLink="/individualmentorplans"  class="tooltip-test" mdbTooltip="Login as Mentor">   <p class="boxshadoww roleoptions">Plans</p></a>
+      <a routerLink="/individualmenteeplans"   (click)="modalRef.close()"class="tooltip-test" mdbTooltip="Login as Mentor">   <p class="boxshadoww roleoptions">Plans</p></a>
     <hr/>
     <mdb-accordion>
       <mdb-accordion-item>
         <ng-template mdbAccordionItemHeader>Menus</ng-template>
         <ng-template mdbAccordionItemBody>
-          <a routerLink="/individualmenteementor"  class="tooltip-test" mdbTooltip="Login as Mentor">   <p class="boxshadoww roleoptions">Mentor</p></a>
+          <a  (click)="individualmenteementor();"  (click)="modalRef.close()"class="tooltip-test" mdbTooltip="Login as Mentor">   <p class="boxshadoww roleoptions">Mentor</p></a>
           <hr/>
-          <a routerLink="/individualmenteecourses"  class="tooltip-test" mdbTooltip="Login as Mentor">   <p class="boxshadoww roleoptions">Courses</p></a>
+          <a  (click)="individualmenteecourses();"  (click)="modalRef.close()"class="tooltip-test" mdbTooltip="Login as Mentor">   <p class="boxshadoww roleoptions">Courses</p></a>
           <hr/>
-          <a routerLink="/individualmenteesessions"  class="tooltip-test" mdbTooltip="Login as Mentor">   <p class="boxshadoww roleoptions">Sessions</p></a>
+          <a  (click)="individualmenteesessions();" (click)="modalRef.close()" class="tooltip-test" mdbTooltip="Login as Mentor">   <p class="boxshadoww roleoptions">Sessions</p></a>
           <hr/>
-          <a routerLink="/individualmenteebusinessassociate"  class="tooltip-test" mdbTooltip="Login as Mentor">   <p class="boxshadoww roleoptions">Business Associate</p></a>
+          <a (click)="individualmenteebusinessassociate();" (click)="modalRef.close()" class="tooltip-test" mdbTooltip="Login as Mentor">   <p class="boxshadoww roleoptions">Business Associate</p></a>
           <hr/>
-          <a routerLink="/Login"  class="tooltip-test" mdbTooltip="Login as Mentor">   <p class="boxshadoww roleoptions">Content</p></a>
+          <a (click)="content();"  class="tooltip-test"  (click)="modalRef.close()"mdbTooltip="Login as Mentor">   <p class="boxshadoww roleoptions">Content</p></a>
           <hr/>
         </ng-template>
       </mdb-accordion-item>
